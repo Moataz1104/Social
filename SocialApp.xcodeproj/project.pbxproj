@@ -19,6 +19,10 @@
 		006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1082BBB91DD00A0159D /* EmailButton.swift */; };
 		006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB10B2BBBB46300A0159D /* AuthTextFields.swift */; };
 		006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB10D2BBBBA1500A0159D /* MainButton.swift */; };
+		006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB10F2BBBCC6700A0159D /* LogInViewModel.swift */; };
+		006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1162BBBCD2700A0159D /* SignUpView.swift */; };
+		006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1172BBBCD2700A0159D /* SignUpView.xib */; };
+		006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB11A2BBBCD7700A0159D /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		006BB1082BBB91DD00A0159D /* EmailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailButton.swift; sourceTree = "<group>"; };
 		006BB10B2BBBB46300A0159D /* AuthTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextFields.swift; sourceTree = "<group>"; };
 		006BB10D2BBBBA1500A0159D /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		006BB10F2BBBCC6700A0159D /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		006BB1162BBBCD2700A0159D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		006BB1172BBBCD2700A0159D /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		006BB11A2BBBCD7700A0159D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				006BB0F72BBA822A00A0159D /* Auth */,
-				006BB0FF2BBB8CEF00A0159D /* CustomViews */,
+				006BB11C2BBBD00300A0159D /* Utilities */,
 				006BB1042BBB8E7D00A0159D /* Resources */,
 				006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */,
 				006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */,
@@ -83,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				006BB0F82BBA823400A0159D /* LogInScreen */,
+				006BB1112BBBCCA800A0159D /* SignUpScreen */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -92,6 +101,7 @@
 			children = (
 				006BB0FA2BBA82AE00A0159D /* LogInView.swift */,
 				006BB0FB2BBA82AE00A0159D /* LogInView.xib */,
+				006BB10F2BBBCC6700A0159D /* LogInViewModel.swift */,
 			);
 			path = LogInScreen;
 			sourceTree = "<group>";
@@ -131,6 +141,24 @@
 				006BB10B2BBBB46300A0159D /* AuthTextFields.swift */,
 			);
 			path = TextFeilds;
+			sourceTree = "<group>";
+		};
+		006BB1112BBBCCA800A0159D /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				006BB1162BBBCD2700A0159D /* SignUpView.swift */,
+				006BB1172BBBCD2700A0159D /* SignUpView.xib */,
+				006BB11A2BBBCD7700A0159D /* SignUpViewModel.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		006BB11C2BBBD00300A0159D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				006BB0FF2BBB8CEF00A0159D /* CustomViews */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +222,7 @@
 				006BB0EE2BBA7B3D00A0159D /* LaunchScreen.storyboard in Resources */,
 				006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */,
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
+				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
 				006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,9 +238,12 @@
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
+				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
+				006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */,
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
 				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
+				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
 				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,13 +9,19 @@ import UIKit
 
 class LogInView: UIViewController {
     
-//    MARK: - Properties
+
+    //    MARK: - Properties
     private var isKeyBoardExpanding = false
     
-//    Outlets
+
+    //    Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     
-//    MARK: - view controller life cycle
+    @IBOutlet weak var emailTextField: AuthTextFields!
+    @IBOutlet weak var passwordTextField: AuthTextFields!
+    
+
+    //    MARK: - view controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +32,14 @@ class LogInView: UIViewController {
     
 //    MARK: - Actions
     
-//    MARK: - Private functions
+    @IBAction func tabGestureAction(_ sender: Any) {
+        view.endEditing(true)
+    }
+    @IBAction func logInButtonAction(_ sender: Any) {
+    }
+    
+    
+    //    MARK: - Private functions
     
     private func keyBoardWillApear(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -41,7 +54,6 @@ class LogInView: UIViewController {
             scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height + 250)
             isKeyBoardExpanding = true
         }
-        print("Number 1")
     }
 
     @objc func keyBoardDisapear(){
@@ -49,9 +61,6 @@ class LogInView: UIViewController {
             scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height - 250)
             isKeyBoardExpanding = false
         }
-        print("Number 2222")
-
-
     }
 
     
