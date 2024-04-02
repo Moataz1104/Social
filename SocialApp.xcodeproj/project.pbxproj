@@ -9,19 +9,33 @@
 /* Begin PBXBuildFile section */
 		006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */; };
 		006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */; };
-		006BB0E62BBA7B3C00A0159D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E52BBA7B3C00A0159D /* ViewController.swift */; };
 		006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */; };
 		006BB0EE2BBA7B3D00A0159D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006BB0EC2BBA7B3D00A0159D /* LaunchScreen.storyboard */; };
+		006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0FA2BBA82AE00A0159D /* LogInView.swift */; };
+		006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB0FB2BBA82AE00A0159D /* LogInView.xib */; };
+		006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1002BBB8D2000A0159D /* SocialMediaButtons.swift */; };
+		006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1022BBB8D8700A0159D /* GoogleButton.swift */; };
+		006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1052BBB8EC000A0159D /* Colors.xcassets */; };
+		006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1082BBB91DD00A0159D /* EmailButton.swift */; };
+		006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB10B2BBBB46300A0159D /* AuthTextFields.swift */; };
+		006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB10D2BBBBA1500A0159D /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		006BB0DE2BBA7B3C00A0159D /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		006BB0E52BBA7B3C00A0159D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006BB0ED2BBA7B3D00A0159D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006BB0EF2BBA7B3D00A0159D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		006BB0FA2BBA82AE00A0159D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		006BB0FB2BBA82AE00A0159D /* LogInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInView.xib; sourceTree = "<group>"; };
+		006BB1002BBB8D2000A0159D /* SocialMediaButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButtons.swift; sourceTree = "<group>"; };
+		006BB1022BBB8D8700A0159D /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
+		006BB1052BBB8EC000A0159D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		006BB1082BBB91DD00A0159D /* EmailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailButton.swift; sourceTree = "<group>"; };
+		006BB10B2BBBB46300A0159D /* AuthTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextFields.swift; sourceTree = "<group>"; };
+		006BB10D2BBBBA1500A0159D /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,69 @@
 		006BB0E02BBA7B3C00A0159D /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				006BB0F72BBA822A00A0159D /* Auth */,
+				006BB0FF2BBB8CEF00A0159D /* CustomViews */,
+				006BB1042BBB8E7D00A0159D /* Resources */,
 				006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */,
 				006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */,
-				006BB0E52BBA7B3C00A0159D /* ViewController.swift */,
-				006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */,
 				006BB0EC2BBA7B3D00A0159D /* LaunchScreen.storyboard */,
 				006BB0EF2BBA7B3D00A0159D /* Info.plist */,
 			);
 			path = SocialApp;
+			sourceTree = "<group>";
+		};
+		006BB0F72BBA822A00A0159D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				006BB0F82BBA823400A0159D /* LogInScreen */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		006BB0F82BBA823400A0159D /* LogInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				006BB0FA2BBA82AE00A0159D /* LogInView.swift */,
+				006BB0FB2BBA82AE00A0159D /* LogInView.xib */,
+			);
+			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		006BB0FF2BBB8CEF00A0159D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				006BB10A2BBBB43A00A0159D /* TextFeilds */,
+				006BB1072BBB91CE00A0159D /* Buttons */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		006BB1042BBB8E7D00A0159D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */,
+				006BB1052BBB8EC000A0159D /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		006BB1072BBB91CE00A0159D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				006BB1002BBB8D2000A0159D /* SocialMediaButtons.swift */,
+				006BB1022BBB8D8700A0159D /* GoogleButton.swift */,
+				006BB1082BBB91DD00A0159D /* EmailButton.swift */,
+				006BB10D2BBBBA1500A0159D /* MainButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		006BB10A2BBBB43A00A0159D /* TextFeilds */ = {
+			isa = PBXGroup;
+			children = (
+				006BB10B2BBBB46300A0159D /* AuthTextFields.swift */,
+			);
+			path = TextFeilds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				006BB0EE2BBA7B3D00A0159D /* LaunchScreen.storyboard in Resources */,
+				006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */,
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
+				006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006BB0E62BBA7B3C00A0159D /* ViewController.swift in Sources */,
 				006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */,
+				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
+				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
+				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
+				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
+				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
+				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
