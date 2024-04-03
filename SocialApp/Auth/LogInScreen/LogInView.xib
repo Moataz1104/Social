@@ -47,10 +47,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dsb-Qx-8b7">
-                                            <rect key="frame" x="9.6666666666666572" y="102.00000000000001" width="373.66666666666674" height="132.33333333333337"/>
+                                            <rect key="frame" x="39.333333333333343" y="102.00000000000001" width="314.33333333333326" height="132.33333333333337"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ktN-po-wtd" userLabel="socialButtons">
-                                                    <rect key="frame" x="29.666666666666657" y="0.0" width="314.33333333333337" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="82"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUQ-fh-3iU" customClass="GoogleButton" customModule="SocialApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="34"/>
@@ -67,23 +67,23 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bx2-NB-rfj" userLabel="ORStack">
-                                                    <rect key="frame" x="0.0" y="112" width="373.66666666666669" height="20.333333333333343"/>
+                                                    <rect key="frame" x="9.6666666666666572" y="112" width="295" height="20.333333333333343"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QJ-cz-mff">
-                                                            <rect key="frame" x="0.0" y="9.6666666666666856" width="157.33333333333334" height="1"/>
+                                                            <rect key="frame" x="0.0" y="9.6666666666666856" width="118" height="1"/>
                                                             <color key="backgroundColor" name="W300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="0Br-Tg-VG4"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-jb-3PT" userLabel="OR">
-                                                            <rect key="frame" x="167.33333333333334" y="0.0" width="39" height="20.333333333333332"/>
+                                                            <rect key="frame" x="128" y="0.0" width="39" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOr-K5-6Zw">
-                                                            <rect key="frame" x="216.33333333333331" y="9.6666666666666856" width="157.33333333333331" height="1"/>
+                                                            <rect key="frame" x="177" y="9.6666666666666856" width="118" height="1"/>
                                                             <color key="backgroundColor" name="W300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="FJH-BM-gtF"/>
@@ -149,6 +149,9 @@
                                                             <state key="normal" title="Sign up">
                                                                 <color key="titleColor" name="B800"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="VTg-Xc-7Ms"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -159,11 +162,11 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="qOr-K5-6Zw" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.4" id="4yI-mm-FtS"/>
+                                <constraint firstItem="qOr-K5-6Zw" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.3" id="4yI-mm-FtS"/>
                                 <constraint firstItem="Hz9-vJ-w4d" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.8" id="8Ku-fP-Egi"/>
                                 <constraint firstItem="MKM-tz-dab" firstAttribute="top" secondItem="vNA-Iq-e1y" secondAttribute="top" id="94A-nC-Oko"/>
                                 <constraint firstItem="MKM-tz-dab" firstAttribute="leading" secondItem="vNA-Iq-e1y" secondAttribute="leading" id="FIY-tO-A5K"/>
-                                <constraint firstItem="7QJ-cz-mff" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.4" id="Hu0-iX-jIu"/>
+                                <constraint firstItem="7QJ-cz-mff" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.3" id="Hu0-iX-jIu"/>
                                 <constraint firstItem="TJa-jb-3PT" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.1" id="LvP-PH-Vxt"/>
                                 <constraint firstAttribute="trailing" secondItem="MKM-tz-dab" secondAttribute="trailing" id="PwV-fy-GeO"/>
                                 <constraint firstItem="iZT-PI-oUC" firstAttribute="width" secondItem="vNA-Iq-e1y" secondAttribute="width" multiplier="0.8" id="Qsj-xR-9Cn"/>

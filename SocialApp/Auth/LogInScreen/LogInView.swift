@@ -11,9 +11,10 @@ class LogInView: UIViewController {
     
 
     //    MARK: - Properties
+    private var viewModel : LogInViewModel
+    
     private var isKeyBoardExpanding = false
     
-
     //    Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -21,10 +22,20 @@ class LogInView: UIViewController {
     @IBOutlet weak var passwordTextField: AuthTextFields!
     
 
+    init(viewModel : LogInViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     //    MARK: - view controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         keyBoardWillApear()
         keyBoardWillDisapear()
     }
@@ -35,7 +46,13 @@ class LogInView: UIViewController {
     @IBAction func tabGestureAction(_ sender: Any) {
         view.endEditing(true)
     }
+    
     @IBAction func logInButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func signUpButton(_ sender: Any) {
+        print("taaap")
+        viewModel.signUpButtonTap()
     }
     
     
@@ -51,14 +68,14 @@ class LogInView: UIViewController {
 
     @objc func keyBoardApear(){
         if !isKeyBoardExpanding{
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height + 250)
+            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height + 150)
             isKeyBoardExpanding = true
         }
     }
 
     @objc func keyBoardDisapear(){
         if isKeyBoardExpanding{
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height - 250)
+            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height - 150)
             isKeyBoardExpanding = false
         }
     }

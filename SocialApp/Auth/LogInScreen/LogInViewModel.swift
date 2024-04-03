@@ -8,5 +8,15 @@
 import Foundation
 
 class LogInViewModel {
+    weak var coordinator : AuthCoordinator?
     
+    init(coordinator: AuthCoordinator) {
+        self.coordinator = coordinator
+    }
+    
+    
+    
+    func signUpButtonTap(){
+        coordinator?.showSignUpScreen()
+    }
 }

@@ -23,6 +23,9 @@
 		006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1162BBBCD2700A0159D /* SignUpView.swift */; };
 		006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1172BBBCD2700A0159D /* SignUpView.xib */; };
 		006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB11A2BBBCD7700A0159D /* SignUpViewModel.swift */; };
+		006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB11E2BBBD1D900A0159D /* Coordinator.swift */; };
+		006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1202BBBDF3600A0159D /* MainCoordinator.swift */; };
+		006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1222BBBEAD400A0159D /* AuthCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		006BB1162BBBCD2700A0159D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		006BB1172BBBCD2700A0159D /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		006BB11A2BBBCD7700A0159D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		006BB11E2BBBD1D900A0159D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		006BB1202BBBDF3600A0159D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		006BB1222BBBEAD400A0159D /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +163,19 @@
 			isa = PBXGroup;
 			children = (
 				006BB0FF2BBB8CEF00A0159D /* CustomViews */,
+				006BB11D2BBBD1C900A0159D /* Coordinator */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		006BB11D2BBBD1C900A0159D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				006BB11E2BBBD1D900A0159D /* Coordinator.swift */,
+				006BB1202BBBDF3600A0159D /* MainCoordinator.swift */,
+				006BB1222BBBEAD400A0159D /* AuthCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,11 +255,14 @@
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
+				006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */,
 				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
+				006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */,
 				006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */,
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
 				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
+				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,
 				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
 				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,
 			);

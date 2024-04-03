@@ -8,5 +8,15 @@
 import Foundation
 
 class SignUpViewModel {
+    weak var coordinator : AuthCoordinator?
     
+    init(coordinator: AuthCoordinator) {
+        self.coordinator = coordinator
+    }
+    
+    
+    
+    func popBack(){
+        coordinator?.popVC()
+    }
 }
