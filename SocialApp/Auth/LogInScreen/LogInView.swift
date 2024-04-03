@@ -13,7 +13,6 @@ class LogInView: UIViewController {
     //    MARK: - Properties
     private var viewModel : LogInViewModel
     
-    private var isKeyBoardExpanding = false
     
     //    Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -21,7 +20,16 @@ class LogInView: UIViewController {
     @IBOutlet weak var emailTextField: AuthTextFields!
     @IBOutlet weak var passwordTextField: AuthTextFields!
     
+    //    MARK: - view controller life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+        keyBoardWillAppear()
+        keyBoardWillDisappear()
+    }
 
+    
     init(viewModel : LogInViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -30,14 +38,6 @@ class LogInView: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    //    MARK: - view controller life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
-        keyBoardWillApear()
-        keyBoardWillDisapear()
     }
 
     
@@ -51,34 +51,29 @@ class LogInView: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        print("taaap")
         viewModel.signUpButtonTap()
     }
     
     
     //    MARK: - Private functions
     
-    private func keyBoardWillApear(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
+    private func keyBoardWillAppear(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
-    private func keyBoardWillDisapear(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDisapear), name: UIResponder.keyboardWillHideNotification, object: nil)
+    private func keyBoardWillDisappear(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    @objc func keyBoardApear(){
-        if !isKeyBoardExpanding{
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height + 150)
-            isKeyBoardExpanding = true
+    @objc func keyBoardAppear(notification : NSNotification){
+        if let keyBoardFrame : NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
+            let keyBoardHeight = keyBoardFrame.cgRectValue.height
+            scrollView.contentInset.bottom = keyBoardHeight
         }
     }
-
-    @objc func keyBoardDisapear(){
-        if isKeyBoardExpanding{
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height - 150)
-            isKeyBoardExpanding = false
-        }
-    }
-
     
+    @objc func keyBoardDisappear(){
+        scrollView.contentInset = .zero
+    }
+
 }
