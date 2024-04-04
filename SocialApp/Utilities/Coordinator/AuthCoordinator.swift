@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class AuthCoordinator : Coordinator{
     var childCoordinators = [Coordinator]()
@@ -36,8 +37,9 @@ class AuthCoordinator : Coordinator{
 
     
     func showSignUpScreen(){
-        let viewModel = SignUpViewModel(coordinator: self)
-        let vc = SignUpView(viewModel: viewModel)
+        let disposeBag = DisposeBag()
+        let viewModel = SignUpViewModel(coordinator: self, disposeBage: disposeBag)
+        let vc = SignUpView(viewModel: viewModel, disposeBage: disposeBag)
         navigationController.pushViewController(vc, animated: true)
     }
 

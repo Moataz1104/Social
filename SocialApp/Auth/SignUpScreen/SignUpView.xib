@@ -13,8 +13,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpView" customModule="SocialApp" customModuleProvider="target">
             <connections>
+                <outlet property="confirmPasswordField" destination="bhd-qm-mZP" id="1xZ-BL-eaj"/>
+                <outlet property="emailField" destination="iLY-jF-g1K" id="Pmv-jH-GR0"/>
+                <outlet property="mainButton" destination="ooC-7l-i8z" id="QrP-N6-fhR"/>
                 <outlet property="mainStack" destination="38o-VA-QGq" id="iw6-bI-tbm"/>
+                <outlet property="passwordField" destination="aTo-aE-VxU" id="5er-kc-b5a"/>
                 <outlet property="scrollView" destination="ANA-2R-qeA" id="zeE-yR-dS5"/>
+                <outlet property="userNameField" destination="5aI-O0-SPX" id="1RZ-M8-6Eg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -95,25 +100,25 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-aL-LLw" userLabel="textFieldsStack">
                                             <rect key="frame" x="19.333333333333343" y="189" width="314.33333333333326" height="178"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-O0-SPX" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-O0-SPX" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLY-jF-g1K" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iLY-jF-g1K" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="48" width="314.33333333333331" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-aE-VxU" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-aE-VxU" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="96" width="314.33333333333331" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-qm-mZP" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-qm-mZP" customClass="AuthTextFields" customModule="SocialApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="144" width="314.33333333333331" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -125,6 +130,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Sign Up"/>
+                                                    <connections>
+                                                        <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="bdm-Zc-Wll"/>
+                                                    </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zl-T0-hPX">
                                                     <rect key="frame" x="77.333333333333357" y="54" width="159.66666666666663" height="29"/>
