@@ -29,8 +29,9 @@ class AuthCoordinator : Coordinator{
     
     
     func showLogInScreen(){
-        let viewModel = LogInViewModel(coordinator: self)
-        let vc = LogInView(viewModel: viewModel)
+        let disposeBag = DisposeBag()
+        let viewModel = LogInViewModel(coordinator: self, disposeBag: disposeBag)
+        let vc = LogInView(viewModel: viewModel, disposeBag: disposeBag)
         
         navigationController.pushViewController(vc, animated: true)
     }

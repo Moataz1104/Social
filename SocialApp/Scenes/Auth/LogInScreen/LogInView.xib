@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInView" customModule="SocialApp" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="iZT-PI-oUC" id="yyi-NV-7UX"/>
+                <outlet property="mainButton" destination="Hz9-vJ-w4d" id="PKt-dq-BEr"/>
                 <outlet property="passwordTextField" destination="Mmq-R5-CQY" id="jHK-k0-OPE"/>
                 <outlet property="scrollView" destination="viL-Cc-F4N" id="pzC-4E-WWE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

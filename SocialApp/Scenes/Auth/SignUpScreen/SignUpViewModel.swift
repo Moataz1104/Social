@@ -67,11 +67,11 @@ class SignUpViewModel {
     
 //    MARK: - Request
     
-    func combineFields() -> Observable<(String,String,String)> {
+    private func combineFields() -> Observable<(String,String,String)> {
         Observable.combineLatest(userNameSubject, emailSubject, passwordSubject)
     }
     
-    func sendRequest(){
+    private func sendRequest(){
         mainButtonSubject
             .withLatestFrom(combineFields())
             .do { userName,email,password in
@@ -81,7 +81,7 @@ class SignUpViewModel {
             .disposed(by: disposeBag)
     }
     
-    func subscribeToErrorPublisher(){
+    private func subscribeToErrorPublisher(){
         APIAuth.shared.errorPublisher
             .subscribe {[weak self] event in
                 print(event.element?.localizedDescription ?? "")

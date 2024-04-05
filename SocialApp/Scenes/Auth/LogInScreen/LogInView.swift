@@ -6,17 +6,19 @@
 //
 
 import UIKit
-
+import RxSwift
+import RxCocoa
 class LogInView: UIViewController {
     
 
     //    MARK: - Properties
     private var viewModel : LogInViewModel
-    
+    let disposeBag : DisposeBag
     
     //    Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var mainButton: MainButton!
     @IBOutlet weak var emailTextField: AuthTextFields!
     @IBOutlet weak var passwordTextField: AuthTextFields!
     
@@ -27,11 +29,21 @@ class LogInView: UIViewController {
         navigationController?.navigationBar.isHidden = true
         keyBoardWillAppear()
         keyBoardWillDisappear()
+        
+        //Bining
+        bindTextFields()
+        bindMainButton()
+        enablingMainButton()
+        
+        //Networking
+        showingNetworkErrorAlert()
+
     }
 
     
-    init(viewModel : LogInViewModel){
+    init(viewModel : LogInViewModel,disposeBag:DisposeBag){
         self.viewModel = viewModel
+        self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -41,7 +53,7 @@ class LogInView: UIViewController {
     }
 
     
-//    MARK: - Actions
+    //    MARK: - Actions
     
     @IBAction func tabGestureAction(_ sender: Any) {
         view.endEditing(true)
@@ -54,7 +66,54 @@ class LogInView: UIViewController {
         viewModel.signUpButtonTap()
     }
     
+    //    MARK: - RX Binding
+    private func bindTextFields(){
+        emailTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
+                guard let text = self?.emailTextField.text else { return }
+                self?.viewModel.emailSubject.onNext(text)
+            })
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
+                guard let text = self?.passwordTextField.text else { return }
+                self?.viewModel.passwordSubject.onNext(text)
+            })
+            .disposed(by: disposeBag)
+        
+    }
     
+    private func bindMainButton(){
+        mainButton.rx.tap
+            .bind(to: viewModel.mainButtonSubject)
+            .disposed(by: disposeBag)
+    }
+
+    private func enablingMainButton(){
+        viewModel.isMainButtonDisabled()
+            .bind(to: mainButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+    }
+
+    //MARK: - Networking
+    
+    private func showingNetworkErrorAlert(){
+        viewModel
+            .errorSubjectMessage
+            .observe(on: MainScheduler.instance)
+            .subscribe {[weak self] errorMessage in
+                let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+
+    
+    
+    
+
     //    MARK: - Private functions
     
     private func keyBoardWillAppear(){
