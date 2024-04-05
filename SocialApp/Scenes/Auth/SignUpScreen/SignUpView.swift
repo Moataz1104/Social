@@ -41,7 +41,8 @@ class SignUpView: UIViewController {
         
         //Bining
         bindTextFields()
-        
+        bindMainButton()
+        enablingMainButton()
         
         //TextFields Validation
         userNameValidation()
@@ -49,9 +50,9 @@ class SignUpView: UIViewController {
         passwordValidation()
         confirmingPasswords()
         
-        viewModel.isMainButtonDisabled()
-            .bind(to: mainButton.rx.isEnabled)
-            .disposed(by: disposeBag)
+        //Networking
+        showingNetworkErrorAlert()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,7 +79,6 @@ class SignUpView: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        
     }
     
     @IBAction func logInButton(_ sender: Any) {
@@ -124,9 +124,22 @@ class SignUpView: UIViewController {
 
     }
     
+    private func enablingMainButton(){
+        viewModel.isMainButtonDisabled()
+            .bind(to: mainButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindMainButton(){
+        mainButton.rx.tap
+            .bind(to: viewModel.mainButtonSubject)
+            .disposed(by: disposeBag)
+            
+    }
+    
 //    MARK: - TextFields Validation
     
-    func userNameValidation(){
+    private func userNameValidation(){
         viewModel.isUserNameValid()
             .observe(on: MainScheduler.instance)
             .subscribe {[weak self] isValid in
@@ -137,7 +150,7 @@ class SignUpView: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func emailValidation(){
+    private func emailValidation(){
         viewModel.isEmailValid()
             .observe(on: MainScheduler.instance)
             .subscribe {[weak self] isValid in
@@ -148,7 +161,7 @@ class SignUpView: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    func passwordValidation(){
+    private func passwordValidation(){
         viewModel.isPasswordValid()
             .observe(on: MainScheduler.instance)
             .subscribe {[weak self] isValid in
@@ -159,7 +172,7 @@ class SignUpView: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func confirmingPasswords(){
+    private func confirmingPasswords(){
         viewModel.arePasswordsEqual()
             .observe(on: MainScheduler.instance)
             .subscribe {[weak self] areValid in
@@ -171,6 +184,20 @@ class SignUpView: UIViewController {
     }
 
 
+    //    MARK: - Networking Functions
+    private func showingNetworkErrorAlert(){
+        viewModel
+            .errorSubjectMessage
+            .observe(on: MainScheduler.instance)
+            .subscribe {[weak self] errorMessage in
+                let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    
     
     //    MARK: - Private functions
     

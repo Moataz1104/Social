@@ -33,6 +33,8 @@
 		006BB1322BBE203700A0159D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB1312BBE203700A0159D /* RxSwift */; };
 		006BB1342BBE203700A0159D /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB1332BBE203700A0159D /* RxSwift-Dynamic */; };
 		006BB13B2BBE749700A0159D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB13A2BBE749700A0159D /* Validation.swift */; };
+		006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB13E2BBFA01600A0159D /* APIConstants.swift */; };
+		006BB1412BBFA0D100A0159D /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1402BBFA0D100A0159D /* APIAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		006BB1202BBBDF3600A0159D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		006BB1222BBBEAD400A0159D /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		006BB13A2BBE749700A0159D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		006BB13E2BBFA01600A0159D /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		006BB1402BBFA0D100A0159D /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,8 @@
 		006BB0E02BBA7B3C00A0159D /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
-				006BB0F72BBA822A00A0159D /* Auth */,
+				006BB13C2BBF9FB700A0159D /* Scenes */,
+				006BB13D2BBF9FDB00A0159D /* APIServices */,
 				006BB11C2BBBD00300A0159D /* Utilities */,
 				006BB1042BBB8E7D00A0159D /* Resources */,
 				006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */,
@@ -201,6 +206,23 @@
 			path = TextFieldsValidation;
 			sourceTree = "<group>";
 		};
+		006BB13C2BBF9FB700A0159D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				006BB0F72BBA822A00A0159D /* Auth */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		006BB13D2BBF9FDB00A0159D /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				006BB13E2BBFA01600A0159D /* APIConstants.swift */,
+				006BB1402BBFA0D100A0159D /* APIAuth.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,7 +311,9 @@
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
+				006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */,
 				006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */,
+				006BB1412BBFA0D100A0159D /* APIAuth.swift in Sources */,
 				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
 				006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */,

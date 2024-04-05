@@ -7,20 +7,26 @@
 
 import Foundation
 import RxSwift
-
+import RxCocoa
 class SignUpViewModel {
+    
     let disposeBag : DisposeBag
     weak var coordinator : AuthCoordinator?
+    
     let userNameSubject = PublishSubject<String>()
     let emailSubject = PublishSubject<String>()
     let passwordSubject = PublishSubject<String>()
     let confirmPasswordSubject = PublishSubject<String>()
+    let errorSubjectMessage = PublishSubject<String>()
+    let mainButtonSubject = PublishRelay<Void>()
 
-    
     init(coordinator: AuthCoordinator,disposeBage : DisposeBag) {
         self.coordinator = coordinator
         self.disposeBag = disposeBage
         
+        subscribeToErrorPublisher()
+        
+        sendRequest()
     }
     
 
@@ -56,20 +62,33 @@ class SignUpViewModel {
                 return tf1 && tf2 && tf3 && tf4
             }
             .startWith(false)
-        
-        
     }
 
     
 //    MARK: - Request
     
-    func requestTest() -> Disposable{
-        Observable.combineLatest(userNameSubject, emailSubject, passwordSubject, confirmPasswordSubject)
-            .subscribe { username,email,pass,confirmPaas in
-                print("userName: \(username) \n email: \(email) \n password:\(pass) \n confirmPassword: \(confirmPaas)")
-            }
+    func combineFields() -> Observable<(String,String,String)> {
+        Observable.combineLatest(userNameSubject, emailSubject, passwordSubject)
     }
     
+    func sendRequest(){
+        mainButtonSubject
+            .withLatestFrom(combineFields())
+            .do { userName,email,password in
+                APIAuth.shared.registerUser(userName: userName, email: email, password: password)
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+    
+    func subscribeToErrorPublisher(){
+        APIAuth.shared.errorPublisher
+            .subscribe {[weak self] event in
+                print(event.element?.localizedDescription ?? "")
+                self?.errorSubjectMessage.onNext(event.element?.localizedDescription ?? "No Description")
+            }
+            .disposed(by: disposeBag)
+    }
 
     
     
