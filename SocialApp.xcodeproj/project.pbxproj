@@ -49,6 +49,8 @@
 		006BB16A2BC396A700A0159D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1692BC396A700A0159D /* HomeView.xib */; };
 		006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1772BC3C0E200A0159D /* AddPostCell.swift */; };
 		006BB17A2BC3C0E200A0159D /* AddPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1782BC3C0E200A0159D /* AddPostCell.xib */; };
+		00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B1C2BC514A900D403AC /* PostsCell.swift */; };
+		00D96B1F2BC514A900D403AC /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D96B1D2BC514A900D403AC /* PostCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		006BB1692BC396A700A0159D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		006BB1772BC3C0E200A0159D /* AddPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
 		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
+		00D96B1C2BC514A900D403AC /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
+		00D96B1D2BC514A900D403AC /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				006BB1722BC3BB6F00A0159D /* AddPost */,
+				00D96B1B2BC5143B00D403AC /* PostCell */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -319,6 +324,15 @@
 				006BB1782BC3C0E200A0159D /* AddPostCell.xib */,
 			);
 			path = AddPost;
+			sourceTree = "<group>";
+		};
+		00D96B1B2BC5143B00D403AC /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				00D96B1C2BC514A900D403AC /* PostsCell.swift */,
+				00D96B1D2BC514A900D403AC /* PostCell.xib */,
+			);
+			path = PostCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +413,7 @@
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
 				006BB1622BC2540100A0159D /* ProfileView.xib in Resources */,
 				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
+				00D96B1F2BC514A900D403AC /* PostCell.xib in Resources */,
 				006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +430,7 @@
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
 				006BB1672BC3966F00A0159D /* HomeView.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
+				00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
 				006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */,
 				006BB1612BC2540100A0159D /* ProfileView.swift in Sources */,

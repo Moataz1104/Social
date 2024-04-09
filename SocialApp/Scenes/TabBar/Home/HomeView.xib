@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeView" customModule="SocialApp" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="fpW-3f-PoX" id="et0-D9-EAq"/>
+                <outlet property="collectionView" destination="8fO-LB-5Ds" id="UUl-iJ-WAp"/>
                 <outlet property="view" destination="hOz-ad-fgd" id="VPv-Eg-BBo"/>
             </connections>
         </placeholder>
@@ -61,15 +61,17 @@
                         <outletCollection property="gestureRecognizers" destination="2th-7n-nLP" appends="YES" id="WTU-PP-lgx"/>
                     </connections>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-3f-PoX">
-                    <rect key="frame" x="0.0" y="189" width="393" height="629"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-LB-5Ds">
+                    <rect key="frame" x="0.0" y="172" width="393" height="646"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" name="W300"/>
-                    <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="2th-7n-nLP" appends="YES" id="6Su-p9-Bkc"/>
-                    </connections>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzK-ti-En0">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="yEL-el-Y9b"/>
             <color key="backgroundColor" name="W300"/>

@@ -12,7 +12,7 @@ protocol AddPostCellDelegate:AnyObject{
 }
 
 
-class AddPostCell: UITableViewCell , UITextViewDelegate {
+class AddPostCell: UICollectionViewCell , UITextViewDelegate {
     
     static let identifier = "AddPostCell"
     weak var delegate : AddPostCellDelegate?
@@ -31,9 +31,6 @@ class AddPostCell: UITableViewCell , UITextViewDelegate {
         configureUi()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     
     private func configureUi(){
