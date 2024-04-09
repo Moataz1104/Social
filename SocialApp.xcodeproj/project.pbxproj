@@ -39,14 +39,16 @@
 		006BB14A2BC2529900A0159D /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1492BC2529900A0159D /* SearchCoordinator.swift */; };
 		006BB14C2BC252A800A0159D /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB14B2BC252A800A0159D /* NotificationCoordinator.swift */; };
 		006BB14E2BC252B300A0159D /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB14D2BC252B300A0159D /* ProfileCoordinator.swift */; };
-		006BB1552BC253CD00A0159D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1532BC253CD00A0159D /* HomeView.swift */; };
-		006BB1562BC253CD00A0159D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1542BC253CD00A0159D /* HomeView.xib */; };
 		006BB1592BC253DF00A0159D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1572BC253DF00A0159D /* SearchView.swift */; };
 		006BB15A2BC253DF00A0159D /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1582BC253DF00A0159D /* SearchView.xib */; };
 		006BB15D2BC253F200A0159D /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB15B2BC253F200A0159D /* NotifiView.swift */; };
 		006BB15E2BC253F200A0159D /* NotifiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB15C2BC253F200A0159D /* NotifiView.xib */; };
 		006BB1612BC2540100A0159D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB15F2BC2540100A0159D /* ProfileView.swift */; };
 		006BB1622BC2540100A0159D /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1602BC2540100A0159D /* ProfileView.xib */; };
+		006BB1672BC3966F00A0159D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1652BC3966F00A0159D /* HomeView.swift */; };
+		006BB16A2BC396A700A0159D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1692BC396A700A0159D /* HomeView.xib */; };
+		006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1772BC3C0E200A0159D /* AddPostCell.swift */; };
+		006BB17A2BC3C0E200A0159D /* AddPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1782BC3C0E200A0159D /* AddPostCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,14 +80,16 @@
 		006BB1492BC2529900A0159D /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		006BB14B2BC252A800A0159D /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
 		006BB14D2BC252B300A0159D /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
-		006BB1532BC253CD00A0159D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		006BB1542BC253CD00A0159D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		006BB1572BC253DF00A0159D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		006BB1582BC253DF00A0159D /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		006BB15B2BC253F200A0159D /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		006BB15C2BC253F200A0159D /* NotifiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiView.xib; sourceTree = "<group>"; };
 		006BB15F2BC2540100A0159D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		006BB1602BC2540100A0159D /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		006BB1652BC3966F00A0159D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		006BB1692BC396A700A0159D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		006BB1772BC3C0E200A0159D /* AddPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
+		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,8 +270,9 @@
 		006BB14F2BC2538E00A0159D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				006BB1532BC253CD00A0159D /* HomeView.swift */,
-				006BB1542BC253CD00A0159D /* HomeView.xib */,
+				006BB1652BC3966F00A0159D /* HomeView.swift */,
+				006BB1692BC396A700A0159D /* HomeView.xib */,
+				006BB16D2BC3BB3100A0159D /* CustomCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,6 +302,23 @@
 				006BB1582BC253DF00A0159D /* SearchView.xib */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		006BB16D2BC3BB3100A0159D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				006BB1722BC3BB6F00A0159D /* AddPost */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		006BB1722BC3BB6F00A0159D /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				006BB1772BC3C0E200A0159D /* AddPostCell.swift */,
+				006BB1782BC3C0E200A0159D /* AddPostCell.xib */,
+			);
+			path = AddPost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,14 +391,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				006BB0EE2BBA7B3D00A0159D /* LaunchScreen.storyboard in Resources */,
+				006BB17A2BC3C0E200A0159D /* AddPostCell.xib in Resources */,
 				006BB15A2BC253DF00A0159D /* SearchView.xib in Resources */,
+				006BB16A2BC396A700A0159D /* HomeView.xib in Resources */,
 				006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */,
 				006BB15E2BC253F200A0159D /* NotifiView.xib in Resources */,
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
 				006BB1622BC2540100A0159D /* ProfileView.xib in Resources */,
 				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
 				006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */,
-				006BB1562BC253CD00A0159D /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,9 +413,9 @@
 				006BB14E2BC252B300A0159D /* ProfileCoordinator.swift in Sources */,
 				006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */,
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
+				006BB1672BC3966F00A0159D /* HomeView.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
-				006BB1552BC253CD00A0159D /* HomeView.swift in Sources */,
 				006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */,
 				006BB1612BC2540100A0159D /* ProfileView.swift in Sources */,
 				006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */,
@@ -400,6 +423,7 @@
 				006BB14C2BC252A800A0159D /* NotificationCoordinator.swift in Sources */,
 				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
+				006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */,
 				006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */,
 				006BB1592BC253DF00A0159D /* SearchView.swift in Sources */,
 				006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */,
