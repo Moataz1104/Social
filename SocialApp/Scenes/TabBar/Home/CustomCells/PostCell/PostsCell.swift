@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PostsCellDelgate:AnyObject{
+    func postCellHeightDidChange(_ height:CGFloat,at indexPath: IndexPath)
+}
+
 class PostsCell: UICollectionViewCell {
     
     @IBOutlet weak var userImage:UIImageView!
@@ -16,11 +20,32 @@ class PostsCell: UICollectionViewCell {
     @IBOutlet weak var likeButtonOutlet:UIButton!
     @IBOutlet weak var numberOfLikes:UILabel!
     @IBOutlet weak var postTime:UILabel!
+    
+    var indexPath: IndexPath?
+    weak var delegate : PostsCellDelgate?
     override func awakeFromNib() {
         super.awakeFromNib()
         
         userImage.layer.cornerRadius = userImage.bounds.width / 2
         userImage.clipsToBounds = true
+        
+
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        getPostCellHeight()
+    }
+
+    
+    func getPostCellHeight(){
+        let maxSize = CGSize(width: postContent.bounds.width, height: CGFloat.greatestFiniteMagnitude)
+        let totalHeight = postContent.text?.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: postContent.font ?? UIFont.systemFont(ofSize: 16)], context: nil).height ?? 0
+
+        if let indexPath = indexPath {
+            delegate?.postCellHeightDidChange(totalHeight + 200, at: indexPath)
+        }
+        
     }
 
 }

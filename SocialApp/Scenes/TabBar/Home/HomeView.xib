@@ -61,9 +61,8 @@
                         <outletCollection property="gestureRecognizers" destination="2th-7n-nLP" appends="YES" id="WTU-PP-lgx"/>
                     </connections>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-LB-5Ds">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-LB-5Ds">
                     <rect key="frame" x="0.0" y="172" width="393" height="646"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" name="W300"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzK-ti-En0">
                         <size key="itemSize" width="128" height="128"/>
@@ -78,8 +77,12 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="YIz-pf-naE" firstAttribute="top" secondItem="yEL-el-Y9b" secondAttribute="top" id="5sO-zx-Wqz"/>
+                <constraint firstItem="8fO-LB-5Ds" firstAttribute="top" secondItem="YIz-pf-naE" secondAttribute="bottom" constant="44" id="LKs-9p-ZaX"/>
+                <constraint firstItem="8fO-LB-5Ds" firstAttribute="trailing" secondItem="yEL-el-Y9b" secondAttribute="trailing" id="NMI-XJ-aIa"/>
+                <constraint firstItem="8fO-LB-5Ds" firstAttribute="bottom" secondItem="yEL-el-Y9b" secondAttribute="bottom" id="Z0v-xF-yBN"/>
                 <constraint firstItem="YIz-pf-naE" firstAttribute="leading" secondItem="yEL-el-Y9b" secondAttribute="leading" id="bvt-6C-q9J"/>
                 <constraint firstItem="YIz-pf-naE" firstAttribute="trailing" secondItem="yEL-el-Y9b" secondAttribute="trailing" id="gty-dw-AbF"/>
+                <constraint firstItem="8fO-LB-5Ds" firstAttribute="leading" secondItem="yEL-el-Y9b" secondAttribute="leading" id="wyg-sL-9wf"/>
             </constraints>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="2th-7n-nLP" appends="YES" id="nNb-eO-7Cg"/>

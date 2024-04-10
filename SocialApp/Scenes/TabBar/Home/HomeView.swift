@@ -13,9 +13,12 @@ struct Post {
 }
 
 
-class HomeView: UIViewController , AddPostCellDelegate{
+class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
+        
+    
     
     var cellHeight: CGFloat?
+    var postsCellHeights: [IndexPath: CGFloat] = [:]
     @IBOutlet weak var collectionView: UICollectionView!
     
     var posts: [Post] = []
@@ -33,6 +36,12 @@ class HomeView: UIViewController , AddPostCellDelegate{
     func cellHeightDidChange(_ height: CGFloat) {
         cellHeight = height
     }
+    
+    func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
+        postsCellHeights[indexPath] = height
+        collectionView.performBatchUpdates(nil, completion: nil)
+        print(postsCellHeights)
+    }
 
     // MARK: - Actions
     @IBAction func tapGesture(_ sender: Any) {
@@ -41,10 +50,15 @@ class HomeView: UIViewController , AddPostCellDelegate{
     
     // MARK: - Privates
     func generateFakeData() {
-        for i in 1...100 {
-            let post = Post(title: "Post \(i)", content: "Content for post \(i)")
-            posts.append(post)
-        }
+        let post1 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post1)
+        let post2 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is")
+        posts.append(post2)
+        let post3 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post3)
+        let post4 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post4)
+
     }
     
     private func registerCells(){
@@ -74,6 +88,9 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell
+            cell.postContent.text = posts[indexPath.item].content
+            cell.delegate = self
+            cell.indexPath = indexPath
             return cell
         }
     }
@@ -82,7 +99,8 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.width, height: cellHeight ?? 150)
         } else {
-            return CGSize(width: collectionView.bounds.width, height: 250)
+            let cellIndexPath = IndexPath(item: indexPath.item, section: 1)
+            return CGSize(width: collectionView.bounds.width, height: postsCellHeights[cellIndexPath] ?? 260)
         }
     }
     
