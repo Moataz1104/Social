@@ -82,7 +82,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.width, height: cellHeight ?? 150)
         } else {
-            return CGSize(width: collectionView.bounds.width, height: 50)
+            return CGSize(width: collectionView.bounds.width, height: 250)
         }
     }
     
