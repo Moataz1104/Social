@@ -109,6 +109,9 @@
                                         <state key="normal" title="  Comment" image="Comment">
                                             <color key="titleColor" name="B500"/>
                                         </state>
+                                        <connections>
+                                            <action selector="commentButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1bb-Cg-jij"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

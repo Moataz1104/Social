@@ -18,8 +18,17 @@ class HomeCoordinator:Coordinator{
     
     
     func start() {
-        let vc = HomeView()
+        let viewModel = HomeViewModel(coordinator: self)
+        let vc = HomeView(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showCommentScreen(){
+        let vc = CommentsView()
+        let newNavController = UINavigationController(rootViewController: vc)
+        newNavController.modalPresentationStyle = .pageSheet
+        navigationController.present(newNavController, animated: true, completion: nil)
+
     }
     
     

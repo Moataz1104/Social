@@ -21,6 +21,7 @@ class PostsCell: UICollectionViewCell {
     @IBOutlet weak var numberOfLikes:UILabel!
     @IBOutlet weak var postTime:UILabel!
     
+    var viewModel : HomeViewModel?
     var indexPath: IndexPath?
     weak var delegate : PostsCellDelgate?
     override func awakeFromNib() {
@@ -36,6 +37,11 @@ class PostsCell: UICollectionViewCell {
         super.layoutSubviews()
         getPostCellHeight()
     }
+    
+    @IBAction func commentButtonAction(_ sender: Any) {
+        viewModel?.showCommentsScreen()
+    }
+    
 
     
     func getPostCellHeight(){

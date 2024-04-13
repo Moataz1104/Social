@@ -51,6 +51,9 @@
 		006BB17A2BC3C0E200A0159D /* AddPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1782BC3C0E200A0159D /* AddPostCell.xib */; };
 		00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B1C2BC514A900D403AC /* PostsCell.swift */; };
 		00D96B1F2BC514A900D403AC /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D96B1D2BC514A900D403AC /* PostCell.xib */; };
+		00D96B222BC9299400D403AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B212BC9299400D403AC /* HomeViewModel.swift */; };
+		00D96B262BC92E8E00D403AC /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B242BC92E8E00D403AC /* CommentsView.swift */; };
+		00D96B272BC92E8E00D403AC /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D96B252BC92E8E00D403AC /* CommentsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
 		00D96B1C2BC514A900D403AC /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		00D96B1D2BC514A900D403AC /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		00D96B212BC9299400D403AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		00D96B242BC92E8E00D403AC /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		00D96B252BC92E8E00D403AC /* CommentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +280,8 @@
 		006BB14F2BC2538E00A0159D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				006BB1652BC3966F00A0159D /* HomeView.swift */,
-				006BB1692BC396A700A0159D /* HomeView.xib */,
-				006BB16D2BC3BB3100A0159D /* CustomCells */,
+				00D96B202BC9296000D403AC /* HomeScreen */,
+				00D96B232BC92E2A00D403AC /* CommentScreen */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -333,6 +338,26 @@
 				00D96B1D2BC514A900D403AC /* PostCell.xib */,
 			);
 			path = PostCell;
+			sourceTree = "<group>";
+		};
+		00D96B202BC9296000D403AC /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				006BB1652BC3966F00A0159D /* HomeView.swift */,
+				006BB1692BC396A700A0159D /* HomeView.xib */,
+				00D96B212BC9299400D403AC /* HomeViewModel.swift */,
+				006BB16D2BC3BB3100A0159D /* CustomCells */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		00D96B232BC92E2A00D403AC /* CommentScreen */ = {
+			isa = PBXGroup;
+			children = (
+				00D96B242BC92E8E00D403AC /* CommentsView.swift */,
+				00D96B252BC92E8E00D403AC /* CommentsView.xib */,
+			);
+			path = CommentScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +435,7 @@
 				006BB16A2BC396A700A0159D /* HomeView.xib in Resources */,
 				006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */,
 				006BB15E2BC253F200A0159D /* NotifiView.xib in Resources */,
+				00D96B272BC92E8E00D403AC /* CommentsView.xib in Resources */,
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
 				006BB1622BC2540100A0159D /* ProfileView.xib in Resources */,
 				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
@@ -439,6 +465,7 @@
 				006BB14C2BC252A800A0159D /* NotificationCoordinator.swift in Sources */,
 				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
+				00D96B262BC92E8E00D403AC /* CommentsView.swift in Sources */,
 				006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */,
 				006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */,
 				006BB1592BC253DF00A0159D /* SearchView.swift in Sources */,
@@ -448,6 +475,7 @@
 				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
 				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,
 				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
+				00D96B222BC9299400D403AC /* HomeViewModel.swift in Sources */,
 				006BB14A2BC2529900A0159D /* SearchCoordinator.swift in Sources */,
 				006BB13B2BBE749700A0159D /* Validation.swift in Sources */,
 				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,

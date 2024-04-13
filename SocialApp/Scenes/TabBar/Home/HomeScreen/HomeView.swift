@@ -14,7 +14,7 @@ struct Post {
 
 
 class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
-        
+    private var viewModel : HomeViewModel
     
     
     var cellHeight: CGFloat?
@@ -23,6 +23,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     var posts: [Post] = []
     
+//    MARK: - View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -31,7 +32,16 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         registerCells()
         generateFakeData()
     }
-
+    
+    init(viewModel : HomeViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Cell Height Delegate
     func cellHeightDidChange(_ height: CGFloat) {
         cellHeight = height
@@ -42,7 +52,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         collectionView.performBatchUpdates(nil, completion: nil)
         print(postsCellHeights)
     }
-
+    
     // MARK: - Actions
     @IBAction func tapGesture(_ sender: Any) {
         view.endEditing(true)
@@ -58,7 +68,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         posts.append(post3)
         let post4 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
         posts.append(post4)
-
+        
     }
     
     private func registerCells(){
@@ -66,6 +76,9 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
     }
 }
+
+
+
 
 extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -80,7 +93,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return posts.count
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddPostCell.identifier, for: indexPath) as! AddPostCell
@@ -91,10 +104,11 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             cell.postContent.text = posts[indexPath.item].content
             cell.delegate = self
             cell.indexPath = indexPath
+            cell.viewModel = viewModel
             return cell
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.width, height: cellHeight ?? 150)
@@ -114,5 +128,5 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         }
     }
-
+    
 }
