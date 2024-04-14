@@ -19,11 +19,11 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     var cellHeight: CGFloat?
     var postsCellHeights: [IndexPath: CGFloat] = [:]
-    
+    var posts: [Post] = []
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var posts: [Post] = []
     
 //    MARK: - View Controller life cycle
     override func viewDidLoad() {
@@ -120,11 +120,11 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10 // Adjust this value as needed
+        return 10 
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         }
