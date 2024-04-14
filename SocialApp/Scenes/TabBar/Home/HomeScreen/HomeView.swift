@@ -19,6 +19,8 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     var cellHeight: CGFloat?
     var postsCellHeights: [IndexPath: CGFloat] = [:]
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var posts: [Post] = []
@@ -50,7 +52,6 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
         postsCellHeights[indexPath] = height
         collectionView.performBatchUpdates(nil, completion: nil)
-        print(postsCellHeights)
     }
     
     // MARK: - Actions
