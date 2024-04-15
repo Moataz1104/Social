@@ -53,6 +53,8 @@
 		009EB3D22BCBB614006F19C4 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3D02BCBB614006F19C4 /* CommentCell.xib */; };
 		009EB3D62BCBEBF7006F19C4 /* UserProfileDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EB3D42BCBEBF7006F19C4 /* UserProfileDetailsCell.swift */; };
 		009EB3D72BCBEBF7006F19C4 /* UserProfileDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */; };
+		009EB3DC2BCCEEB5006F19C4 /* AddUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EB3DA2BCCEEB5006F19C4 /* AddUserInfoCell.swift */; };
+		009EB3DD2BCCEEB5006F19C4 /* AddUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3DB2BCCEEB5006F19C4 /* AddUserInfoCell.xib */; };
 		00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B1C2BC514A900D403AC /* PostsCell.swift */; };
 		00D96B1F2BC514A900D403AC /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D96B1D2BC514A900D403AC /* PostCell.xib */; };
 		00D96B222BC9299400D403AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B212BC9299400D403AC /* HomeViewModel.swift */; };
@@ -103,6 +105,8 @@
 		009EB3D02BCBB614006F19C4 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		009EB3D42BCBEBF7006F19C4 /* UserProfileDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDetailsCell.swift; sourceTree = "<group>"; };
 		009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileDetailsCell.xib; sourceTree = "<group>"; };
+		009EB3DA2BCCEEB5006F19C4 /* AddUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserInfoCell.swift; sourceTree = "<group>"; };
+		009EB3DB2BCCEEB5006F19C4 /* AddUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserInfoCell.xib; sourceTree = "<group>"; };
 		00D96B1C2BC514A900D403AC /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		00D96B1D2BC514A900D403AC /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		00D96B212BC9299400D403AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -354,10 +358,28 @@
 		009EB3D32BCBEBC6006F19C4 /* CustomProfileCells */ = {
 			isa = PBXGroup;
 			children = (
+				009EB3D82BCCEE89006F19C4 /* UserDetailsCell */,
+				009EB3D92BCCEE9A006F19C4 /* AddUserInfoCell */,
+			);
+			path = CustomProfileCells;
+			sourceTree = "<group>";
+		};
+		009EB3D82BCCEE89006F19C4 /* UserDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
 				009EB3D42BCBEBF7006F19C4 /* UserProfileDetailsCell.swift */,
 				009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */,
 			);
-			path = CustomProfileCells;
+			path = UserDetailsCell;
+			sourceTree = "<group>";
+		};
+		009EB3D92BCCEE9A006F19C4 /* AddUserInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				009EB3DA2BCCEEB5006F19C4 /* AddUserInfoCell.swift */,
+				009EB3DB2BCCEEB5006F19C4 /* AddUserInfoCell.xib */,
+			);
+			path = AddUserInfoCell;
 			sourceTree = "<group>";
 		};
 		00D96B1B2BC5143B00D403AC /* PostCell */ = {
@@ -470,6 +492,7 @@
 				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
 				00D96B1F2BC514A900D403AC /* PostCell.xib in Resources */,
 				009EB3D22BCBB614006F19C4 /* CommentCell.xib in Resources */,
+				009EB3DD2BCCEEB5006F19C4 /* AddUserInfoCell.xib in Resources */,
 				006BB0FD2BBA82AE00A0159D /* LogInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +508,7 @@
 				006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */,
 				006BB1012BBB8D2000A0159D /* SocialMediaButtons.swift in Sources */,
 				006BB1672BC3966F00A0159D /* HomeView.swift in Sources */,
+				009EB3DC2BCCEEB5006F19C4 /* AddUserInfoCell.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
 				009EB3D12BCBB614006F19C4 /* CommentCell.swift in Sources */,
 				00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */,

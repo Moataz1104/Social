@@ -13,57 +13,101 @@ class ProfileView: UIViewController {
     
     var postsCellHeights: [IndexPath: CGFloat] = [:]
     var posts: [Post] = []
-
+    var isMyPostsSelected = true
+    
+    //    MARK: - ViewController life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         collectionView.dataSource = self
         collectionView.delegate = self
         registerCell()
+        
+        generateFakeData()
+        
+        keyBoardWillAppear()
+        keyBoardWillDisappear()
 
     }
-
-    // MARK: - Cell Height Delegate
-    func cellHeightDidChange(_ height: CGFloat) {
+    //    MARK: - ACtions
+    @IBAction func tapGestureEndEditing(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
-    func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
-        postsCellHeights[indexPath] = height
-        collectionView.performBatchUpdates(nil, completion: nil)
-    }
+    //    MARK: - Private functions
+
 
     private func registerCell(){
         collectionView.register(UINib(nibName: UserProfileDetailsCell.identifier, bundle: nil), forCellWithReuseIdentifier: UserProfileDetailsCell.identifier)
+        collectionView.register(UINib(nibName: PostsCell.identifier, bundle: nil),forCellWithReuseIdentifier: PostsCell.identifier)
+        collectionView.register(UINib(nibName: AddUserInfoCell.identifier, bundle: nil),forCellWithReuseIdentifier: AddUserInfoCell.identifier)
+
     }
-
-
+    
+    private func generateFakeData() {
+        let post1 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post1)
+        let post2 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is")
+        posts.append(post2)
+        let post3 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post3)
+        let post4 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
+        posts.append(post4)
+        
+    }
 
 }
 
 
-extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if section == 0 {
-//            return 1
-//        } else {
-//            return posts.count
-//        }
-        1
+        if section == 0 {
+            return 1
+        } else {
+            if isMyPostsSelected {
+                return posts.count
+            }else{
+                return 1
+            }
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserProfileDetailsCell.identifier, for: indexPath) as! UserProfileDetailsCell
-        cell.delegate = self
-        return cell
+        if indexPath.section == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserProfileDetailsCell.identifier, for: indexPath) as! UserProfileDetailsCell
+            cell.delegate = self
+            return cell
+        }else{
+            if isMyPostsSelected{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsCell.identifier, for: indexPath) as! PostsCell
+                cell.postContent.text = posts[indexPath.item].content
+                cell.delegate = self
+                cell.indexPath = indexPath
+
+                return cell
+            }else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddUserInfoCell.identifier, for: indexPath) as! AddUserInfoCell
+                
+                return cell
+            }
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 250)
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.bounds.width, height: 250)
+        } else {
+            let cellIndexPath = IndexPath(item: indexPath.item, section: 1)
+            return CGSize(width: collectionView.bounds.width, height: isMyPostsSelected ? postsCellHeights[cellIndexPath] ?? 260 : 300)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -83,15 +127,52 @@ extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
 extension ProfileView : UserProfileDetailsCellDelegate{
     func tabBarItemSelected(tag: Int) {
         if tag == 1000{
-            collectionView.backgroundColor = .cyan
+            isMyPostsSelected = true
+            collectionView.reloadData()
         }else if tag == 1001{
-            collectionView.backgroundColor = .black
+            isMyPostsSelected = false
+            collectionView.reloadData()
+
         }
-        else{
-            collectionView.backgroundColor = .cyan
-        }
-        
     }
         
     
 }
+
+extension ProfileView : PostsCellDelgate{
+    func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
+        postsCellHeights[indexPath] = height
+        collectionView.performBatchUpdates(nil, completion: nil)
+    }
+
+}
+
+
+extension ProfileView{
+    private func keyBoardWillAppear(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    private func keyBoardWillDisappear(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyBoardAppear(notification : NSNotification){
+        if let keyBoardFrame : NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
+            let keyBoardHeight = keyBoardFrame.cgRectValue.height - 100
+            collectionView.contentInset.bottom = keyBoardHeight
+            
+        }
+    }
+    
+    @objc func keyBoardDisappear(){
+        collectionView.contentInset = .zero
+        
+    }
+    
+    
+    
+    
+}
+
+

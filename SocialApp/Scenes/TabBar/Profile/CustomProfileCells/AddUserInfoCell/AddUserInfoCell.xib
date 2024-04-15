@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddUserInfoCell" customModule="SocialApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="301" height="274"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="301" height="274"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O2N-8z-ldH">
+                        <rect key="frame" x="15" y="31.333333333333329" width="271" height="236.33333333333337"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sPc-bG-ASy">
+                                <rect key="frame" x="-3.3333333333333357" y="-1.3333333333333357" width="73.333333333333343" height="76.666666666666686"/>
+                                <color key="tintColor" name="B600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="DcW-2Q-PXH"/>
+                                    <constraint firstAttribute="height" constant="70" id="e44-Xm-7LG"/>
+                                </constraints>
+                                <imageReference key="image" image="person.crop.rectangle.badge.plus" catalog="system" symbolScale="large"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2B-kG-gkK">
+                                <rect key="frame" x="0.0" y="90" width="271" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cb9-Uu-9PE">
+                                <rect key="frame" x="0.0" y="144" width="271" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-WN-Kpu">
+                                <rect key="frame" x="0.0" y="198" width="271" height="38.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYA-hK-1H7">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.333333333333329" height="38.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="LogOut">
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-31-xPX">
+                                        <rect key="frame" x="201" y="0.0" width="70" height="38.333333333333336"/>
+                                        <color key="backgroundColor" name="BL900"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="1aY-ai-sbS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save">
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cb9-Uu-9PE" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="OgF-L2-S7f"/>
+                <constraint firstItem="7Sw-WN-Kpu" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="VSQ-Jk-D2z"/>
+                <constraint firstItem="G2B-kG-gkK" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="cWM-bp-gg2"/>
+                <constraint firstItem="O2N-8z-ldH" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="erU-Ic-fML"/>
+                <constraint firstItem="O2N-8z-ldH" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="jKg-ii-jx4"/>
+            </constraints>
+            <size key="customSize" width="301" height="274"/>
+            <connections>
+                <outlet property="chooseImage" destination="sPc-bG-ASy" id="92p-rE-j5h"/>
+                <outlet property="logOutButton" destination="pYA-hK-1H7" id="RHR-K1-bAq"/>
+                <outlet property="saveButton" destination="T1o-31-xPX" id="neI-Mc-DhT"/>
+                <outlet property="userBio" destination="cb9-Uu-9PE" id="By1-fD-6ev"/>
+                <outlet property="userName" destination="G2B-kG-gkK" id="tUj-bw-0OM"/>
+            </connections>
+            <point key="canvasLocation" x="127.48091603053435" y="44.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.rectangle.badge.plus" catalog="system" width="128" height="97"/>
+        <namedColor name="B600">
+            <color red="0.29411764705882354" green="0.33725490196078434" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BL900">
+            <color red="0.29803921568627451" green="0.40784313725490196" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
