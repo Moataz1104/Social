@@ -14,6 +14,8 @@ protocol PostsCellDelgate:AnyObject{
 class PostsCell: UICollectionViewCell {
     static let identifier = "PostCell"
     
+    var isThisMyPost = false
+    
     @IBOutlet weak var userImage:UIImageView!
     @IBOutlet weak var userName:UILabel!
     @IBOutlet weak var userNickName:UILabel!
@@ -54,5 +56,6 @@ class PostsCell: UICollectionViewCell {
         }
         
     }
+    
 
 }

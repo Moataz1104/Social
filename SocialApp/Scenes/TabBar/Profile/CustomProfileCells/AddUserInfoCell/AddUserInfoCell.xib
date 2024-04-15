@@ -26,6 +26,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sPc-bG-ASy">
                                 <rect key="frame" x="-3.3333333333333357" y="-1.3333333333333357" width="73.333333333333343" height="76.666666666666686"/>
                                 <color key="tintColor" name="B600"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="DcW-2Q-PXH"/>
                                     <constraint firstAttribute="height" constant="70" id="e44-Xm-7LG"/>
@@ -63,6 +64,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Save">
                                             <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="zMi-hN-pbE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

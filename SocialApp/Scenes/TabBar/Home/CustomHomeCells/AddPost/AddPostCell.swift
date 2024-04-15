@@ -29,8 +29,35 @@ class AddPostCell: UICollectionViewCell , UITextViewDelegate {
         super.awakeFromNib()
         postTextView.delegate = self
         configureUi()
+        
+        addObserverForSelectedImage()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+//    MARK: - Selected image observer
+
+    func addObserverForSelectedImage(){
+        NotificationCenter.default.addObserver(self, selector: #selector(selectedImageDidChange), name: .selectedImageDidChangeNotification, object: nil)
+
+    }
+    
+    @objc private func selectedImageDidChange() {
+        updateUI()
+    }
+    
+    private func updateUI() {
+        if let image = ImageSelectionManager.shared.selectedImage {
+            userImage.image = image
+            userImage.contentMode = .scaleAspectFill
+        }
+    }
+
+    
+    
+//    MARK: - Privates
     
     
     private func configureUi(){
