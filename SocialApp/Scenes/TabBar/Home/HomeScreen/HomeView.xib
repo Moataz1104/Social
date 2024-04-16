@@ -16,11 +16,6 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tapGestureRecognizer id="2th-7n-nLP">
-            <connections>
-                <action selector="tapGesture:" destination="-1" id="ALI-6J-qCl"/>
-            </connections>
-        </tapGestureRecognizer>
         <view contentMode="scaleToFill" id="vaE-KH-DWc">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,12 +61,16 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="v63-66-4uZ">
                     <rect key="frame" x="0.0" y="135" width="393" height="683"/>
                     <color key="backgroundColor" name="W300"/>
+                    <gestureRecognizers/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CbF-4f-2uf">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="2th-7n-nLP" appends="YES" id="Jd0-7J-rB4"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Wac-pL-5pE"/>
@@ -88,6 +87,11 @@
             </constraints>
             <point key="canvasLocation" x="151.90839694656489" y="35.91549295774648"/>
         </view>
+        <tapGestureRecognizer id="2th-7n-nLP">
+            <connections>
+                <action selector="tapGesture:" destination="-1" id="ALI-6J-qCl"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="logo" width="32" height="32"/>
