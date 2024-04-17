@@ -16,7 +16,7 @@ class APIAuth {
     private init(){}
     
     let errorPublisher = PublishRelay<Error>()
-    
+    let resultDataPublisher = PublishSubject<Any>()
     
     func logInUser(email: String, password: String){
         let body = [
@@ -31,6 +31,7 @@ class APIAuth {
                     do {
                         let response = try JSONDecoder().decode(LoginResponse.self, from: data)
                         print("Request successful. Response data: \(response)")
+                        self?.resultDataPublisher.onNext(data)
                     } catch {
                         print("Error decoding response: \(error)")
                         self?.errorPublisher.accept(error)
@@ -61,6 +62,7 @@ class APIAuth {
                     do {
                         let response = try JSONDecoder().decode(SignupResponse.self, from: data)
                         print("Request successful. Response data: \(response)")
+                        self?.resultDataPublisher.onNext(data)
                     } catch {
                         print("Error decoding response: \(error)")
                         self?.errorPublisher.accept(error)
@@ -96,9 +98,11 @@ class APIAuth {
             }
             if (200..<300).contains(httpResponse.statusCode) {
                 completion(.success(data))
+                return
             }else{
                 print("HTTP Error: \(httpResponse.statusCode)")
                 completion(.failure(NSError(domain: "HTTPError", code: httpResponse.statusCode)))
+                return
             }
         }
         .resume()

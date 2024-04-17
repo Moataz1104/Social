@@ -21,6 +21,8 @@ class LogInView: UIViewController {
     @IBOutlet weak var mainButton: MainButton!
     @IBOutlet weak var emailTextField: AuthTextFields!
     @IBOutlet weak var passwordTextField: AuthTextFields!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     //    MARK: - view controller life cycle
     
@@ -37,6 +39,9 @@ class LogInView: UIViewController {
         
         //Networking
         showingNetworkErrorAlert()
+        
+        activityIndicator.isHidden = true
+        subscribeToActivityIndicator()
 
     }
 
@@ -94,6 +99,23 @@ class LogInView: UIViewController {
         viewModel.isMainButtonDisabled()
             .bind(to: mainButton.rx.isEnabled)
             .disposed(by: disposeBag)
+    }
+    
+    private func subscribeToActivityIndicator(){
+        viewModel.activityIndicatorRelay
+            .observe(on: MainScheduler.instance)
+            .subscribe {[weak self] isAnimating in
+                if isAnimating{
+                    self?.activityIndicator.isHidden = false
+                    self?.activityIndicator.startAnimating()
+                }else{
+                    self?.activityIndicator.isHidden = true
+                    self?.activityIndicator.stopAnimating()
+
+                }
+            }
+            .disposed(by: disposeBag)
+
     }
 
     //MARK: - Networking

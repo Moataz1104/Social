@@ -25,6 +25,7 @@ class SignUpView: UIViewController {
     @IBOutlet weak var emailField: AuthTextFields!
     @IBOutlet weak var passwordField: AuthTextFields!
     @IBOutlet weak var confirmPasswordField: AuthTextFields!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     //    MARK: - view controller life cycle
@@ -52,6 +53,9 @@ class SignUpView: UIViewController {
         
         //Networking
         showingNetworkErrorAlert()
+        
+        activityIndicator.isHidden = true
+        subscribeToActivityIndicator()
         
     }
     
@@ -136,6 +140,24 @@ class SignUpView: UIViewController {
             .disposed(by: disposeBag)
             
     }
+    
+    private func subscribeToActivityIndicator(){
+        viewModel.activityIndicatorRelay
+            .observe(on: MainScheduler.instance)
+            .subscribe {[weak self] isAnimating in
+                if isAnimating{
+                    self?.activityIndicator.isHidden = false
+                    self?.activityIndicator.startAnimating()
+                }else{
+                    self?.activityIndicator.isHidden = true
+                    self?.activityIndicator.stopAnimating()
+
+                }
+            }
+            .disposed(by: disposeBag)
+
+    }
+
     
 //    MARK: - TextFields Validation
     

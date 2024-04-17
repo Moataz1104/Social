@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInView" customModule="SocialApp" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="raK-kM-5iC" id="8kM-zL-q8h"/>
                 <outlet property="emailTextField" destination="iZT-PI-oUC" id="yyi-NV-7UX"/>
                 <outlet property="mainButton" destination="Hz9-vJ-w4d" id="PKt-dq-BEr"/>
                 <outlet property="passwordTextField" destination="Mmq-R5-CQY" id="jHK-k0-OPE"/>
@@ -28,10 +29,10 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNA-Iq-e1y" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="576.33333333333337"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="626.33333333333337"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="MKM-tz-dab" userLabel="MainStack">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="576.33333333333337"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="626.33333333333337"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="meW-RH-sJf" userLabel="LogoH">
                                             <rect key="frame" x="153" y="0.0" width="87" height="32"/>
@@ -48,7 +49,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dsb-Qx-8b7">
-                                            <rect key="frame" x="39.333333333333343" y="102.00000000000001" width="314.33333333333326" height="132.33333333333337"/>
+                                            <rect key="frame" x="39.333333333333343" y="102.00000000000001" width="314.33333333333326" height="182.33333333333337"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ktN-po-wtd" userLabel="socialButtons">
                                                     <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="82"/>
@@ -92,10 +93,13 @@
                                                         </view>
                                                     </subviews>
                                                 </stackView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="raK-kM-5iC">
+                                                    <rect key="frame" x="147.33333333333331" y="162.33333333333331" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5y9-l5-1cs">
-                                            <rect key="frame" x="39.333333333333343" y="304.33333333333331" width="314.33333333333326" height="119"/>
+                                            <rect key="frame" x="39.333333333333343" y="354.33333333333331" width="314.33333333333326" height="119"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="EDr-7h-5n0" userLabel="TextFieldsStack">
                                                     <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="82"/>
@@ -123,7 +127,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-qx-i8a" userLabel="ButtonsStack">
-                                            <rect key="frame" x="39.333333333333343" y="493.33333333333337" width="314.33333333333326" height="83"/>
+                                            <rect key="frame" x="39.333333333333343" y="543.33333333333337" width="314.33333333333326" height="83"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz9-vJ-w4d" customClass="MainButton" customModule="SocialApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="34"/>
@@ -212,7 +216,7 @@
     <resources>
         <image name="logo" width="32" height="32"/>
         <namedColor name="B500">
-            <color red="0.36470588235294116" green="0.40392156862745099" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36500000953674316" green="0.40400001406669617" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="B600">
             <color red="0.29411764705882354" green="0.33725490196078434" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

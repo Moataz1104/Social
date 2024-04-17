@@ -17,12 +17,14 @@ class LogInViewModel {
     let passwordSubject = PublishSubject<String>()
     let errorSubjectMessage = PublishSubject<String>()
     let mainButtonSubject = PublishRelay<Void>()
+    let activityIndicatorRelay = BehaviorRelay(value: false)
 
     init(coordinator: AuthCoordinator,disposeBag : DisposeBag) {
         self.coordinator = coordinator
         self.disposeBag = disposeBag
         
         subscribeToErrorPublisher()
+        subscribeToDataPublisher()
         
         sendRequest()
 
@@ -37,11 +39,13 @@ class LogInViewModel {
     private func sendRequest(){
         mainButtonSubject
             .withLatestFrom(combineFields())
-            .do {email,password in
+            .do {[weak self]email,password in
+                self?.activityIndicatorRelay.accept(true)
                 APIAuth.shared.logInUser(email: email, password: password)
             }
             .subscribe()
             .disposed(by: disposeBag)
+
     }
     
     private func subscribeToErrorPublisher(){
@@ -49,10 +53,19 @@ class LogInViewModel {
             .subscribe {[weak self] event in
                 print(event.element?.localizedDescription ?? "")
                 self?.errorSubjectMessage.onNext(event.element?.localizedDescription ?? "No Description")
+                self?.activityIndicatorRelay.accept(false)
             }
             .disposed(by: disposeBag)
     }
     
+    private func subscribeToDataPublisher(){
+        APIAuth.shared.resultDataPublisher
+            .subscribe { [weak self] event in
+                self?.activityIndicatorRelay.accept(false)
+            }
+            .disposed(by: disposeBag)
+    }
+
     
     
     
