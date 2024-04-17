@@ -10,7 +10,8 @@ import Foundation
 struct apiK{
     static let logInURL =
     URL(string: "https://social-app-api-944j.onrender.com/api/v1/auth/login")
-    static let registerURL = URL(string: "https //nglsync.cengage.com/register")
+    static let registerURL =
+    URL(string: "https://social-app-api-944j.onrender.com/api/v1/auth/signup")
     static let forgetPwURL = URL(string: "")
 
 }

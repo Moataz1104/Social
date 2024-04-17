@@ -12,6 +12,7 @@
 		004DB3802BD001EF00F279E9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB37F2BD001EF00F279E9 /* ProfileViewModel.swift */; };
 		004DB3852BD0070700F279E9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3832BD0070700F279E9 /* MessageCell.swift */; };
 		004DB3862BD0070700F279E9 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004DB3842BD0070700F279E9 /* MessageCell.xib */; };
+		004DB3882BD039EC00F279E9 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3872BD039EC00F279E9 /* AuthModel.swift */; };
 		006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */; };
 		006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */; };
 		006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		004DB37F2BD001EF00F279E9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		004DB3832BD0070700F279E9 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		004DB3842BD0070700F279E9 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		004DB3872BD039EC00F279E9 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		006BB0DE2BBA7B3C00A0159D /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				006BB0F82BBA823400A0159D /* LogInScreen */,
 				006BB1112BBBCCA800A0159D /* SignUpScreen */,
+				004DB3872BD039EC00F279E9 /* AuthModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
 				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
 				004DB37C2BD001A300F279E9 /* MessagesView.swift in Sources */,
+				004DB3882BD039EC00F279E9 /* AuthModel.swift in Sources */,
 				0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */,
 				0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */,
 				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,

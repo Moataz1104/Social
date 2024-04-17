@@ -9,10 +9,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct LoginResponse: Codable {
-    let message: String
-    let token: String
-}
 
 
 class APIAuth {
@@ -51,15 +47,24 @@ class APIAuth {
     func registerUser(userName:String,email: String, password: String){
         print("Request sent")
         let body = [
+            "name":userName,
             "userName":userName,
             "email": email,
-            "password": password
+            "password": password,
+            "confirmPassword":password
         ]
         baseRequest(url: apiK.registerURL!, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
                     print("Request successful. Response data: \(data)")
+                    do {
+                        let response = try JSONDecoder().decode(SignupResponse.self, from: data)
+                        print("Request successful. Response data: \(response)")
+                    } catch {
+                        print("Error decoding response: \(error)")
+                        self?.errorPublisher.accept(error)
+                    }
                 }
             case .failure(let error):
                 print("Request failed with error: \(error.localizedDescription)")
@@ -68,14 +73,6 @@ class APIAuth {
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     private func baseRequest(url:URL,body:[String:String],completion: @escaping (Result<Data?,Error>) ->Void){
