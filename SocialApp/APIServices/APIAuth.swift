@@ -9,6 +9,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+struct LoginResponse: Codable {
+    let message: String
+    let token: String
+}
+
+
 class APIAuth {
     static let shared = APIAuth()
     private init(){}
@@ -26,6 +32,14 @@ class APIAuth {
             case .success(let data):
                 if let data = data{
                     print("Request successful. Response data: \(data)")
+                    do {
+                        let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                        print("Request successful. Response data: \(response)")
+                    } catch {
+                        print("Error decoding response: \(error)")
+                        self?.errorPublisher.accept(error)
+                    }
+                    
                 }
             case .failure(let error):
                 print("Request failed with error: \(error.localizedDescription)")
