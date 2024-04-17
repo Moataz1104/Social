@@ -45,6 +45,9 @@
                                     <color key="tintColor" name="B500"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system"/>
+                                    <connections>
+                                        <action selector="messagesButtonAction:" destination="-1" eventType="touchUpInside" id="cdP-IX-AuR"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

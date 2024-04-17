@@ -18,10 +18,15 @@ class ProfileCoordinator:Coordinator{
     
     
     func start() {
-        let vc = ProfileView()
+        let viewModel = ProfileViewModel(coordinator: self)
+        let vc = ProfileView(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
 
     }
     
+    func showMessagesScreen(){
+        let vc = MessagesView()
+        navigationController.pushViewController(vc, animated: true)
+    }
     
 }
