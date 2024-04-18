@@ -62,6 +62,11 @@ class LogInViewModel {
         APIAuth.shared.resultDataPublisher
             .subscribe { [weak self] event in
                 self?.activityIndicatorRelay.accept(false)
+                if let result = event.element as? LoginResponse{
+                    if result.message == "success"{
+                        self?.coordinator?.delegate?.didLoginSuccessfully()
+                    }
+                }
             }
             .disposed(by: disposeBag)
     }

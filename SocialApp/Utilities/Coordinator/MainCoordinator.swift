@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class MainCoordinator : Coordinator {
     var childCoordinators = [Coordinator]()
     
@@ -29,46 +30,56 @@ class MainCoordinator : Coordinator {
     
     func showAuth(){
         let childCoordinator = AuthCoordinator(navigationController: navigationController)
-        
+        childCoordinator.delegate = self
         childCoordinators.append(childCoordinator)
         childCoordinator.start()
     }
     
     
     func showTabBar(){
-        let tabBarController = UITabBarController()
-        tabBarController.tabBar.tintColor = .black
-        tabBarController.tabBar.backgroundColor = .white
-
-        let tab1Coordinator = HomeCoordinator(navigationController: UINavigationController())
-        let tab2Coordinator = SearchCoordinator(navigationController: UINavigationController())
-        let tab3Coordinator = NotificationCoordinator(navigationController: UINavigationController())
-        let tab4Coordinator = ProfileCoordinator(navigationController: UINavigationController())
-
-        childCoordinators.append(contentsOf: [tab1Coordinator as Coordinator, tab2Coordinator as Coordinator, tab3Coordinator as Coordinator, tab4Coordinator as Coordinator])
-
-        tab1Coordinator.start()
-        tab2Coordinator.start()
-        tab3Coordinator.start()
-        tab4Coordinator.start()
-
-        tabBarController.viewControllers = [tab1Coordinator.navigationController,
-                                             tab2Coordinator.navigationController,
-                                             tab3Coordinator.navigationController,
-                                             tab4Coordinator.navigationController]
-        
-        if let items = tabBarController.tabBar.items{
-            items[0].image = UIImage(systemName: "house.fill")
-            items[1].image = UIImage(systemName: "magnifyingglass")
-            items[2].image = UIImage(systemName: "bell")
-            items[3].image = UIImage(systemName: "person")
-
+        DispatchQueue.main.async {[weak self] in
+            
+            let tabBarController = UITabBarController()
+            tabBarController.tabBar.tintColor = .black
+            tabBarController.tabBar.backgroundColor = .white
+            
+            let tab1Coordinator = HomeCoordinator(navigationController: UINavigationController())
+            let tab2Coordinator = SearchCoordinator(navigationController: UINavigationController())
+            let tab3Coordinator = NotificationCoordinator(navigationController: UINavigationController())
+            let tab4Coordinator = ProfileCoordinator(navigationController: UINavigationController())
+            
+            self?.childCoordinators.append(contentsOf: [tab1Coordinator as Coordinator, tab2Coordinator as Coordinator, tab3Coordinator as Coordinator, tab4Coordinator as Coordinator])
+            
+            tab1Coordinator.start()
+            tab2Coordinator.start()
+            tab3Coordinator.start()
+            tab4Coordinator.start()
+            
+            tabBarController.viewControllers = [tab1Coordinator.navigationController,
+                                                tab2Coordinator.navigationController,
+                                                tab3Coordinator.navigationController,
+                                                tab4Coordinator.navigationController]
+            
+            if let items = tabBarController.tabBar.items{
+                items[0].image = UIImage(systemName: "house.fill")
+                items[1].image = UIImage(systemName: "magnifyingglass")
+                items[2].image = UIImage(systemName: "bell")
+                items[3].image = UIImage(systemName: "person")
+                
+            }
+            
+            
+            self?.navigationController.setViewControllers([tabBarController], animated: true)
         }
-        
-
-        navigationController.setViewControllers([tabBarController], animated: true)
-
     }
     
+
+    
         
+}
+
+extension MainCoordinator: AuthCoordinatorDelegate {
+    func didLoginSuccessfully() {
+        showTabBar()
+    }
 }

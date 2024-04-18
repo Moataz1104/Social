@@ -28,11 +28,13 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
 //    MARK: - View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
         collectionView.dataSource = self
         collectionView.delegate = self
         registerCells()
         generateFakeData()
+        
+        
     }
     
     init(viewModel : HomeViewModel){

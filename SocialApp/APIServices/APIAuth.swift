@@ -31,7 +31,7 @@ class APIAuth {
                     do {
                         let response = try JSONDecoder().decode(LoginResponse.self, from: data)
                         print("Request successful. Response data: \(response)")
-                        self?.resultDataPublisher.onNext(data)
+                        self?.resultDataPublisher.onNext(response)
                     } catch {
                         print("Error decoding response: \(error)")
                         self?.errorPublisher.accept(error)
@@ -62,7 +62,7 @@ class APIAuth {
                     do {
                         let response = try JSONDecoder().decode(SignupResponse.self, from: data)
                         print("Request successful. Response data: \(response)")
-                        self?.resultDataPublisher.onNext(data)
+                        self?.resultDataPublisher.onNext(response)
                     } catch {
                         print("Error decoding response: \(error)")
                         self?.errorPublisher.accept(error)

@@ -9,11 +9,17 @@ import Foundation
 import UIKit
 import RxSwift
 
+protocol AuthCoordinatorDelegate: AnyObject {
+    func didLoginSuccessfully()
+}
+
+
 class AuthCoordinator : Coordinator{
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
+    weak var delegate: AuthCoordinatorDelegate?
+
     init( navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
