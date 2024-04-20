@@ -18,7 +18,7 @@ class MainCoordinator : Coordinator {
         self.navigationController = navigationController
     }
     
-    var isLogin = false
+    var isLogin = true
     
     func start() {
         if isLogin{

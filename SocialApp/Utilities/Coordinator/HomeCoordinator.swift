@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-
+import RxSwift
+import RxCocoa
 class HomeCoordinator:Coordinator{
     var childCoordinators = [Coordinator]()
 
@@ -18,8 +19,9 @@ class HomeCoordinator:Coordinator{
     
     
     func start() {
-        let viewModel = HomeViewModel(coordinator: self)
-        let vc = HomeView(viewModel: viewModel)
+        let disposeBag = DisposeBag()
+        let viewModel = HomeViewModel(coordinator: self, disposeBag: disposeBag)
+        let vc = HomeView(viewModel: viewModel, disposeBag: disposeBag)
         navigationController.pushViewController(vc, animated: true)
     }
     

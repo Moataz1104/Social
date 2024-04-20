@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 struct Post {
     let title: String
@@ -15,7 +17,8 @@ struct Post {
 
 class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     private var viewModel : HomeViewModel
-    
+
+    let disposeBag : DisposeBag
     
     var cellHeight: CGFloat?
     var postsCellHeights: [IndexPath: CGFloat] = [:]
@@ -37,8 +40,9 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         
     }
     
-    init(viewModel : HomeViewModel){
+    init(viewModel : HomeViewModel,disposeBag:DisposeBag){
         self.viewModel = viewModel
+        self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -60,6 +64,21 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     @IBAction func tapGesture(_ sender: Any) {
         view.endEditing(true)
     }
+    
+//    MARK: - RX Binding
+    func bindPostButtonTap(postButton:UIButton){
+        postButton.rx.tap
+            .bind(to: viewModel.postButtonSubject)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindToPostSubject(postTextView:UITextView){
+        postTextView.rx.text.orEmpty.bind(to: viewModel.addPostContentSubject)
+            .disposed(by: disposeBag)
+
+    }
+
+    
     
     // MARK: - Privates
     func generateFakeData() {
@@ -101,6 +120,8 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddPostCell.identifier, for: indexPath) as! AddPostCell
             cell.delegate = self
+            bindPostButtonTap(postButton: cell.postButton)
+            bindToPostSubject(postTextView: cell.postTextView)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell
@@ -111,6 +132,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return cell
         }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
@@ -133,3 +155,5 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
 }
+
+

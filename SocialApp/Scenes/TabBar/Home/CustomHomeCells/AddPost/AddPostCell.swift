@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol AddPostCellDelegate:AnyObject{
     func cellHeightDidChange(_ height:CGFloat)
 }
 
 
-class AddPostCell: UICollectionViewCell , UITextViewDelegate {
+
+class AddPostCell: UICollectionViewCell  {
     
     static let identifier = "AddPostCell"
     weak var delegate : AddPostCellDelegate?
-    
     
     @IBOutlet weak var postTextView: UITextView!
     
@@ -31,6 +33,7 @@ class AddPostCell: UICollectionViewCell , UITextViewDelegate {
         configureUi()
         
         addObserverForSelectedImage()
+                
     }
     
     deinit {
@@ -72,7 +75,7 @@ class AddPostCell: UICollectionViewCell , UITextViewDelegate {
 }
 
 
-extension AddPostCell{
+extension AddPostCell : UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         let newSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.greatestFiniteMagnitude))
         
@@ -80,9 +83,8 @@ extension AddPostCell{
         delegate?.cellHeightDidChange(newSize.height + 150)
          
         
-        if let tableView = superview as? UITableView {
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        if let collectionView = superview as? UICollectionView {
+            collectionView.performBatchUpdates(nil, completion: nil)
         }
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -101,3 +103,5 @@ extension AddPostCell{
     
 
 }
+
+
