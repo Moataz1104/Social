@@ -18,12 +18,14 @@ class APIAuth {
     let errorPublisher = PublishRelay<Error>()
     let resultDataPublisher = PublishSubject<Any>()
     
+    var accessToken = ""
+    
     func logInUser(email: String, password: String){
         let body = [
             "email": email,
             "password": password
         ]
-        baseRequest(url: apiK.logInURL!, body: body) {[weak self] result in
+        APIRequest.baseRequest(url: apiK.logInURL!, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
@@ -32,6 +34,7 @@ class APIAuth {
                         let response = try JSONDecoder().decode(LoginResponse.self, from: data)
                         print("Request successful. Response data: \(response)")
                         self?.resultDataPublisher.onNext(response)
+                        self?.accessToken = response.accessToken
                     } catch {
                         print("Error decoding response: \(error)")
                         self?.errorPublisher.accept(error)
@@ -54,7 +57,7 @@ class APIAuth {
             "password": password,
             "confirmPassword":password
         ]
-        baseRequest(url: apiK.registerURL!, body: body) {[weak self] result in
+        APIRequest.baseRequest(url: apiK.registerURL!, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
@@ -75,39 +78,6 @@ class APIAuth {
         }
     }
 
-    
-    
-    private func baseRequest(url:URL,body:[String:String],completion: @escaping (Result<Data?,Error>) ->Void){
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
-        request.httpBody = jsonData
-        
-        let session = URLSession.shared
-        
-        session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error)
-                completion(.failure(error))
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(NSError(domain: "InvalidResponse", code: 0)))
-                return
-            }
-            if (200..<300).contains(httpResponse.statusCode) {
-                completion(.success(data))
-                return
-            }else{
-                print("HTTP Error: \(httpResponse.statusCode)")
-                completion(.failure(NSError(domain: "HTTPError", code: httpResponse.statusCode)))
-                return
-            }
-        }
-        .resume()
-
-    }
     
     
     

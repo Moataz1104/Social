@@ -13,5 +13,9 @@ struct apiK{
     static let registerURL =
     URL(string: "https://social-app-api-944j.onrender.com/api/v1/auth/signup")
     static let forgetPwURL = URL(string: "")
-
+    static let addPostURL = URL(string: "")
+    
+    
+    
+    
 }

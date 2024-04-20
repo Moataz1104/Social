@@ -30,8 +30,9 @@ class HomeViewModel{
     
     private func subscribeToPostButton(){
         postButtonSubject
-            .do(onNext: { _ in
-                print(self.postContent)
+            .do(onNext: {[weak self] _ in
+                guard let self = self else {return}
+                APIAddPost.shared.addPost(content: self.postContent, accessToken: APIAuth.shared.accessToken)
             })
             .subscribe()
             .disposed(by: disposeBag)
@@ -39,7 +40,8 @@ class HomeViewModel{
     
     private func subscribeToPostContent(){
         addPostContentSubject
-            .subscribe { content in
+            .subscribe {[weak self] content in
+                guard let self = self else {return}
                 self.postContent = content
             }
             .disposed(by: disposeBag)
