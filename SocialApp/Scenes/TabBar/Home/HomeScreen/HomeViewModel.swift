@@ -16,6 +16,7 @@ class HomeViewModel{
     
     let addPostContentSubject = PublishSubject<String>()
     let postButtonSubject = PublishRelay<Void>()
+    let errorSubjectMessage = PublishSubject<String>()
 
     var postContent = ""
     
@@ -25,6 +26,7 @@ class HomeViewModel{
         
         subscribeToPostButton()
         subscribeToPostContent()
+        subscribeToErrorPublisher()
     }
     
     
@@ -53,4 +55,17 @@ class HomeViewModel{
     func showCommentsScreen(){
         coordinator?.showCommentScreen()
     }
+    
+    
+    private func subscribeToErrorPublisher(){
+        APIAddPost.shared.errorPublisher
+            .subscribe {[weak self] event in
+                print(event.event.element?.localizedDescription ?? "")
+                self?.errorSubjectMessage.onNext(event.element?.localizedDescription ?? "No Description")
+
+            }
+            .disposed(by: disposeBag)
+    }
+
+
 }

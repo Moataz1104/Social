@@ -37,7 +37,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         registerCells()
         generateFakeData()
         
-        
+        showingNetworkErrorAlert()
     }
     
     init(viewModel : HomeViewModel,disposeBag:DisposeBag){
@@ -76,6 +76,20 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         postTextView.rx.text.orEmpty.bind(to: viewModel.addPostContentSubject)
             .disposed(by: disposeBag)
 
+    }
+
+    //MARK: - Networking
+    
+    private func showingNetworkErrorAlert(){
+        viewModel
+            .errorSubjectMessage
+            .observe(on: MainScheduler.instance)
+            .subscribe {[weak self] errorMessage in
+                let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
 
     
