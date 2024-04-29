@@ -25,7 +25,14 @@ class APIAuth {
             "email": email,
             "password": password
         ]
-        APIRequest.baseRequest(url: apiK.logInURL!, body: body) {[weak self] result in
+        
+        var request = URLRequest(url: apiK.logInURL!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        request.httpBody = jsonData
+
+        APIRequests.baseRequest( request: request, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
@@ -57,7 +64,13 @@ class APIAuth {
             "password": password,
             "confirmPassword":password
         ]
-        APIRequest.baseRequest(url: apiK.registerURL!, body: body) {[weak self] result in
+        var request = URLRequest(url: apiK.logInURL!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        request.httpBody = jsonData
+
+        APIRequests.baseRequest(request:request, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{

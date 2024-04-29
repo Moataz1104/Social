@@ -27,6 +27,8 @@ class HomeViewModel{
         subscribeToPostButton()
         subscribeToPostContent()
         subscribeToErrorPublisher()
+        
+        getAllPosts()
     }
     
     
@@ -34,7 +36,7 @@ class HomeViewModel{
         postButtonSubject
             .do(onNext: {[weak self] _ in
                 guard let self = self else {return}
-                APIAddPost.shared.addPost(content: self.postContent, accessToken: APIAuth.shared.accessToken)
+                APIPosts.shared.addPost(content: self.postContent, accessToken: APIAuth.shared.accessToken)
             })
             .subscribe()
             .disposed(by: disposeBag)
@@ -49,16 +51,8 @@ class HomeViewModel{
             .disposed(by: disposeBag)
             
     }
-    
-    
-    
-    func showCommentsScreen(){
-        coordinator?.showCommentScreen()
-    }
-    
-    
     private func subscribeToErrorPublisher(){
-        APIAddPost.shared.errorPublisher
+        APIPosts.shared.errorPublisher
             .subscribe {[weak self] event in
                 print(event.event.element?.localizedDescription ?? "")
                 self?.errorSubjectMessage.onNext(event.element?.localizedDescription ?? "No Description")
@@ -66,6 +60,25 @@ class HomeViewModel{
             }
             .disposed(by: disposeBag)
     }
+
+    
+    func getAllPosts(){
+        APIPosts.shared.getAllPosts(accessToken: APIAuth.shared.accessToken)
+    }
+    
+    
+    
+    
+    
+//    Navigation
+    
+    func showCommentsScreen(){
+        coordinator?.showCommentScreen()
+    }
+    
+    
+    
+    
 
 
 }

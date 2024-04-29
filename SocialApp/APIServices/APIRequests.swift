@@ -7,13 +7,10 @@
 
 import Foundation
 
-struct APIRequest{
-    static func baseRequest(url:URL,body:[String:String],completion: @escaping (Result<Data?,Error>) ->Void){
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
-        request.httpBody = jsonData
+struct APIRequests{
+    
+    static func baseRequest(request:URLRequest,body:[String:String]?,completion: @escaping (Result<Data?,Error>) ->Void){
+
         
         let session = URLSession.shared
         
@@ -41,5 +38,4 @@ struct APIRequest{
     }
     
     
-
 }

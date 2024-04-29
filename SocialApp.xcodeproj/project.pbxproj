@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0044355A2BDEE38100C22F61 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 004435592BDEE38100C22F61 /* RxCocoa */; };
+		0044355C2BDEE38100C22F61 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0044355B2BDEE38100C22F61 /* RxCocoa-Dynamic */; };
+		0044355E2BDEE38100C22F61 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0044355D2BDEE38100C22F61 /* RxSwift */; settings = {ATTRIBUTES = (Required, ); }; };
+		004435602BDEE38100C22F61 /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0044355F2BDEE38100C22F61 /* RxSwift-Dynamic */; settings = {ATTRIBUTES = (Required, ); }; };
 		004DB37C2BD001A300F279E9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB37A2BD001A300F279E9 /* MessagesView.swift */; };
 		004DB37D2BD001A300F279E9 /* MessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004DB37B2BD001A300F279E9 /* MessagesView.xib */; };
 		004DB3802BD001EF00F279E9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB37F2BD001EF00F279E9 /* ProfileViewModel.swift */; };
 		004DB3852BD0070700F279E9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3832BD0070700F279E9 /* MessageCell.swift */; };
 		004DB3862BD0070700F279E9 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004DB3842BD0070700F279E9 /* MessageCell.xib */; };
 		004DB3882BD039EC00F279E9 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3872BD039EC00F279E9 /* AuthModel.swift */; };
-		004DB38A2BD3F0E200F279E9 /* APIAddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3892BD3F0E200F279E9 /* APIAddPost.swift */; };
-		004DB38E2BD3F4DB00F279E9 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB38D2BD3F4DB00F279E9 /* APIRequest.swift */; };
+		004DB38A2BD3F0E200F279E9 /* APIPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB3892BD3F0E200F279E9 /* APIPosts.swift */; };
+		004DB38E2BD3F4DB00F279E9 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DB38D2BD3F4DB00F279E9 /* APIRequests.swift */; };
 		006BB0E22BBA7B3C00A0159D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */; };
 		006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */; };
 		006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006BB0EA2BBA7B3D00A0159D /* Assets.xcassets */; };
@@ -34,12 +38,6 @@
 		006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB11E2BBBD1D900A0159D /* Coordinator.swift */; };
 		006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1202BBBDF3600A0159D /* MainCoordinator.swift */; };
 		006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1222BBBEAD400A0159D /* AuthCoordinator.swift */; };
-		006BB12A2BBE203700A0159D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB1292BBE203700A0159D /* RxCocoa */; };
-		006BB12C2BBE203700A0159D /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB12B2BBE203700A0159D /* RxCocoa-Dynamic */; };
-		006BB12E2BBE203700A0159D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB12D2BBE203700A0159D /* RxRelay */; };
-		006BB1302BBE203700A0159D /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB12F2BBE203700A0159D /* RxRelay-Dynamic */; };
-		006BB1322BBE203700A0159D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB1312BBE203700A0159D /* RxSwift */; };
-		006BB1342BBE203700A0159D /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 006BB1332BBE203700A0159D /* RxSwift-Dynamic */; };
 		006BB13B2BBE749700A0159D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB13A2BBE749700A0159D /* Validation.swift */; };
 		006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB13E2BBFA01600A0159D /* APIConstants.swift */; };
 		006BB1412BBFA0D100A0159D /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1402BBFA0D100A0159D /* APIAuth.swift */; };
@@ -57,6 +55,11 @@
 		006BB16A2BC396A700A0159D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1692BC396A700A0159D /* HomeView.xib */; };
 		006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1772BC3C0E200A0159D /* AddPostCell.swift */; };
 		006BB17A2BC3C0E200A0159D /* AddPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1782BC3C0E200A0159D /* AddPostCell.xib */; };
+		0072892C2BDF0D68007CF4D7 /* RxCocoa-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 0044355B2BDEE38100C22F61 /* RxCocoa-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0072892D2BDF0D6A007CF4D7 /* RxSwift-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 0044355F2BDEE38100C22F61 /* RxSwift-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0072892F2BDF1217007CF4D7 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 0072892E2BDF1217007CF4D7 /* RxBlocking */; };
+		007289312BDF1217007CF4D7 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; };
+		007289322BDF1253007CF4D7 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */; };
 		0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */; };
 		0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */; };
@@ -73,6 +76,22 @@
 		00D96B272BC92E8E00D403AC /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D96B252BC92E8E00D403AC /* CommentsView.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		004DB3902BDDABB600F279E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				007289322BDF1253007CF4D7 /* RxBlocking-Dynamic in Embed Frameworks */,
+				0072892D2BDF0D6A007CF4D7 /* RxSwift-Dynamic in Embed Frameworks */,
+				0072892C2BDF0D68007CF4D7 /* RxCocoa-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		004DB37A2BD001A300F279E9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		004DB37B2BD001A300F279E9 /* MessagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesView.xib; sourceTree = "<group>"; };
@@ -80,8 +99,8 @@
 		004DB3832BD0070700F279E9 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		004DB3842BD0070700F279E9 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		004DB3872BD039EC00F279E9 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
-		004DB3892BD3F0E200F279E9 /* APIAddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAddPost.swift; sourceTree = "<group>"; };
-		004DB38D2BD3F4DB00F279E9 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		004DB3892BD3F0E200F279E9 /* APIPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPosts.swift; sourceTree = "<group>"; };
+		004DB38D2BD3F4DB00F279E9 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		006BB0DE2BBA7B3C00A0159D /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006BB0E12BBA7B3C00A0159D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006BB0E32BBA7B3C00A0159D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,12 +160,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006BB1342BBE203700A0159D /* RxSwift-Dynamic in Frameworks */,
-				006BB12E2BBE203700A0159D /* RxRelay in Frameworks */,
-				006BB12C2BBE203700A0159D /* RxCocoa-Dynamic in Frameworks */,
-				006BB1302BBE203700A0159D /* RxRelay-Dynamic in Frameworks */,
-				006BB12A2BBE203700A0159D /* RxCocoa in Frameworks */,
-				006BB1322BBE203700A0159D /* RxSwift in Frameworks */,
+				004435602BDEE38100C22F61 /* RxSwift-Dynamic in Frameworks */,
+				0044355E2BDEE38100C22F61 /* RxSwift in Frameworks */,
+				0044355C2BDEE38100C22F61 /* RxCocoa-Dynamic in Frameworks */,
+				007289312BDF1217007CF4D7 /* RxBlocking-Dynamic in Frameworks */,
+				0044355A2BDEE38100C22F61 /* RxCocoa in Frameworks */,
+				0072892F2BDF1217007CF4D7 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,9 +352,9 @@
 			isa = PBXGroup;
 			children = (
 				006BB13E2BBFA01600A0159D /* APIConstants.swift */,
-				004DB38D2BD3F4DB00F279E9 /* APIRequest.swift */,
+				004DB38D2BD3F4DB00F279E9 /* APIRequests.swift */,
 				006BB1402BBFA0D100A0159D /* APIAuth.swift */,
-				004DB3892BD3F0E200F279E9 /* APIAddPost.swift */,
+				004DB3892BD3F0E200F279E9 /* APIPosts.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -493,6 +512,7 @@
 				006BB0DA2BBA7B3C00A0159D /* Sources */,
 				006BB0DB2BBA7B3C00A0159D /* Frameworks */,
 				006BB0DC2BBA7B3C00A0159D /* Resources */,
+				004DB3902BDDABB600F279E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -500,12 +520,12 @@
 			);
 			name = SocialApp;
 			packageProductDependencies = (
-				006BB1292BBE203700A0159D /* RxCocoa */,
-				006BB12B2BBE203700A0159D /* RxCocoa-Dynamic */,
-				006BB12D2BBE203700A0159D /* RxRelay */,
-				006BB12F2BBE203700A0159D /* RxRelay-Dynamic */,
-				006BB1312BBE203700A0159D /* RxSwift */,
-				006BB1332BBE203700A0159D /* RxSwift-Dynamic */,
+				004435592BDEE38100C22F61 /* RxCocoa */,
+				0044355B2BDEE38100C22F61 /* RxCocoa-Dynamic */,
+				0044355D2BDEE38100C22F61 /* RxSwift */,
+				0044355F2BDEE38100C22F61 /* RxSwift-Dynamic */,
+				0072892E2BDF1217007CF4D7 /* RxBlocking */,
+				007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */,
 			);
 			productName = SocialApp;
 			productReference = 006BB0DE2BBA7B3C00A0159D /* SocialApp.app */;
@@ -609,7 +629,7 @@
 				004DB37C2BD001A300F279E9 /* MessagesView.swift in Sources */,
 				004DB3882BD039EC00F279E9 /* AuthModel.swift in Sources */,
 				0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */,
-				004DB38A2BD3F0E200F279E9 /* APIAddPost.swift in Sources */,
+				004DB38A2BD3F0E200F279E9 /* APIPosts.swift in Sources */,
 				0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */,
 				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,
 				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
@@ -618,7 +638,7 @@
 				006BB14A2BC2529900A0159D /* SearchCoordinator.swift in Sources */,
 				006BB13B2BBE749700A0159D /* Validation.swift in Sources */,
 				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,
-				004DB38E2BD3F4DB00F279E9 /* APIRequest.swift in Sources */,
+				004DB38E2BD3F4DB00F279E9 /* APIRequests.swift in Sources */,
 				006BB1482BC2528D00A0159D /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,22 +781,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT6D65325Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moataz.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -792,22 +817,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT6D65325Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moataz.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -853,35 +883,35 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		006BB1292BBE203700A0159D /* RxCocoa */ = {
+		004435592BDEE38100C22F61 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		006BB12B2BBE203700A0159D /* RxCocoa-Dynamic */ = {
+		0044355B2BDEE38100C22F61 /* RxCocoa-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = "RxCocoa-Dynamic";
 		};
-		006BB12D2BBE203700A0159D /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		006BB12F2BBE203700A0159D /* RxRelay-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxRelay-Dynamic";
-		};
-		006BB1312BBE203700A0159D /* RxSwift */ = {
+		0044355D2BDEE38100C22F61 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		006BB1332BBE203700A0159D /* RxSwift-Dynamic */ = {
+		0044355F2BDEE38100C22F61 /* RxSwift-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = "RxSwift-Dynamic";
+		};
+		0072892E2BDF1217007CF4D7 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 006BB1242BBE203700A0159D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxBlocking-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
