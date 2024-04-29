@@ -79,6 +79,14 @@ class HomeViewModel{
             .disposed(by: disposeBag)
     }
     
+    private func subscribeToAddPostsResultPublisher(){
+        APIPosts.shared.addPostResultPublisher
+            .subscribe { event in
+                
+            }
+            .disposed(by: disposeBag)
+    }
+    
     
     
     private func subscribeToErrorPublisher(){

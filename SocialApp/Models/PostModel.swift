@@ -16,13 +16,13 @@ struct PostModel: Codable {
 
 struct Datum: Codable {
     let id, content: String?
-//    let images: [String]?
-//    let createdBy: String?
-//    let commentsCount, likesCount: Int?
-//    let createdAt, updatedAt: String?
+    let images: [String]?
+    let createdBy: UserModel?
+    let commentsCount, likesCount: Int?
+    let createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case content /*images, createdBy, commentsCount, likesCount, createdAt, updatedAt*/
+        case content, images, createdBy, commentsCount, likesCount, createdAt, updatedAt
     }
 }

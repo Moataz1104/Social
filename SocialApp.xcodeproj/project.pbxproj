@@ -61,6 +61,7 @@
 		007289312BDF1217007CF4D7 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; };
 		007289322BDF1253007CF4D7 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289342BDF1EE3007CF4D7 /* PostModel.swift */; };
+		007289372BDF4B1A007CF4D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289362BDF4B1A007CF4D7 /* UserModel.swift */; };
 		0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */; };
 		0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */; };
 		0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */; };
@@ -141,6 +142,7 @@
 		006BB1772BC3C0E200A0159D /* AddPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
 		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
 		007289342BDF1EE3007CF4D7 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		007289362BDF4B1A007CF4D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionManager.swift; sourceTree = "<group>"; };
 		0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiCell.swift; sourceTree = "<group>"; };
 		0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiCell.xib; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				004DB3872BD039EC00F279E9 /* AuthModel.swift */,
 				007289342BDF1EE3007CF4D7 /* PostModel.swift */,
+				007289362BDF4B1A007CF4D7 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */,
 				006BB11F2BBBD1D900A0159D /* Coordinator.swift in Sources */,
 				006BB1592BC253DF00A0159D /* SearchView.swift in Sources */,
+				007289372BDF4B1A007CF4D7 /* UserModel.swift in Sources */,
 				006BB1182BBBCD2700A0159D /* SignUpView.swift in Sources */,
 				006BB15D2BC253F200A0159D /* NotifiView.swift in Sources */,
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
