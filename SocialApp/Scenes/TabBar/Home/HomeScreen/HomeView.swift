@@ -38,6 +38,10 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         generateFakeData()
         
         showingNetworkErrorAlert()
+        
+        reloadCollectionViewClosure()
+        
+
     }
     
     init(viewModel : HomeViewModel,disposeBag:DisposeBag){
@@ -111,6 +115,16 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         collectionView.register(UINib(nibName: AddPostCell.identifier, bundle: nil), forCellWithReuseIdentifier: AddPostCell.identifier)
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
     }
+    
+    
+    private func reloadCollectionViewClosure(){
+        viewModel.reloadDataClosure = { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+
+    }
 }
 
 
@@ -126,7 +140,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         if section == 0 {
             return 1
         } else {
-            return posts.count
+            return viewModel.posts.count
         }
     }
     
@@ -139,7 +153,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell
-            cell.postContent.text = posts[indexPath.item].content
+            cell.postContent.text = viewModel.posts[indexPath.item].content /*posts[indexPath.item].content*/
             cell.delegate = self
             cell.indexPath = indexPath
             cell.viewModel = viewModel

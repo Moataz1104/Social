@@ -60,6 +60,7 @@
 		0072892F2BDF1217007CF4D7 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 0072892E2BDF1217007CF4D7 /* RxBlocking */; };
 		007289312BDF1217007CF4D7 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; };
 		007289322BDF1253007CF4D7 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289342BDF1EE3007CF4D7 /* PostModel.swift */; };
 		0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */; };
 		0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */; };
 		0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */; };
@@ -139,6 +140,7 @@
 		006BB1692BC396A700A0159D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		006BB1772BC3C0E200A0159D /* AddPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
 		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
+		007289342BDF1EE3007CF4D7 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionManager.swift; sourceTree = "<group>"; };
 		0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiCell.swift; sourceTree = "<group>"; };
 		0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiCell.xib; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		006BB0E02BBA7B3C00A0159D /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				007289332BDF1E8D007CF4D7 /* Models */,
 				006BB13C2BBF9FB700A0159D /* Scenes */,
 				006BB13D2BBF9FDB00A0159D /* APIServices */,
 				006BB11C2BBBD00300A0159D /* Utilities */,
@@ -245,7 +248,6 @@
 			children = (
 				006BB0F82BBA823400A0159D /* LogInScreen */,
 				006BB1112BBBCCA800A0159D /* SignUpScreen */,
-				004DB3872BD039EC00F279E9 /* AuthModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -426,6 +428,15 @@
 				006BB1782BC3C0E200A0159D /* AddPostCell.xib */,
 			);
 			path = AddPost;
+			sourceTree = "<group>";
+		};
+		007289332BDF1E8D007CF4D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				004DB3872BD039EC00F279E9 /* AuthModel.swift */,
+				007289342BDF1EE3007CF4D7 /* PostModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0099BE822BCE6D92008DE9E0 /* CustomNotifiCells */ = {
@@ -632,6 +643,7 @@
 				004DB38A2BD3F0E200F279E9 /* APIPosts.swift in Sources */,
 				0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */,
 				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,
+				007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */,
 				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
 				004DB3802BD001EF00F279E9 /* ProfileViewModel.swift in Sources */,
 				00D96B222BC9299400D403AC /* HomeViewModel.swift in Sources */,

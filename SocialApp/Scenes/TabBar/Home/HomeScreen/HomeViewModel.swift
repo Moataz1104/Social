@@ -17,8 +17,12 @@ class HomeViewModel{
     let addPostContentSubject = PublishSubject<String>()
     let postButtonSubject = PublishRelay<Void>()
     let errorSubjectMessage = PublishSubject<String>()
-
+    
+    var posts = [Datum]()
     var postContent = ""
+    
+    var reloadDataClosure: (() -> Void)?
+
     
     init(coordinator: HomeCoordinator,disposeBag:DisposeBag) {
         self.coordinator = coordinator
@@ -27,10 +31,14 @@ class HomeViewModel{
         subscribeToPostButton()
         subscribeToPostContent()
         subscribeToErrorPublisher()
+        subscribeToGetPostsPublisher()
         
         getAllPosts()
     }
     
+    
+    
+//    MARK: - View subscribers
     
     private func subscribeToPostButton(){
         postButtonSubject
@@ -51,6 +59,28 @@ class HomeViewModel{
             .disposed(by: disposeBag)
             
     }
+//    MARK: - API subscribers
+    
+    
+    private func subscribeToGetPostsPublisher(){
+        APIPosts.shared.getPostsResultPublisher
+            .subscribe {[weak self] event in
+                if let result = event.event.element as? PostModel{
+                    if result.message == "success"{
+                        if let data = result.data{
+                            self?.posts = data
+                            print("posts decoded data \(String(describing: self?.posts))")
+                            self?.reloadDataClosure?()
+
+                        }
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    
+    
     private func subscribeToErrorPublisher(){
         APIPosts.shared.errorPublisher
             .subscribe {[weak self] event in
