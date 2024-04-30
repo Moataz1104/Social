@@ -25,3 +25,10 @@ struct apiK{
     static let addCommentURL =
     URL(string:"https://social-app-api-944j.onrender.com/api/v1/post/660b65bb5922822130f468a3/comment")
 }
+
+/*
+ Any user has to be activated
+ activated account:
+ email: moataz.mohamed.id@gmail.com
+ PW : 12345678
+ */

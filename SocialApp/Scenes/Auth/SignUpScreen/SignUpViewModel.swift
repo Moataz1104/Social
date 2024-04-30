@@ -100,6 +100,12 @@ class SignUpViewModel {
         APIAuth.shared.resultDataPublisher
             .subscribe { [weak self] event in
                 self?.activityIndicatorRelay.accept(false)
+                if let result = event.element as? SignupResponse{
+                    if result.message == "success"{
+                        self?.popBack()
+                    }
+                }
+
             }
             .disposed(by: disposeBag)
     }
@@ -109,6 +115,8 @@ class SignUpViewModel {
     
 //    MARK: - Navigation
     func popBack(){
-        coordinator?.popVC()
+        DispatchQueue.main.async {[weak self] in
+            self?.coordinator?.popVC()
+        }
     }
 }

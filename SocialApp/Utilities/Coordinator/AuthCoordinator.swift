@@ -30,7 +30,9 @@ class AuthCoordinator : Coordinator{
     
     
     func popVC(){
-        navigationController.popViewController(animated: true)
+        DispatchQueue.main.async {[weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }
     }
     
     

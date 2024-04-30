@@ -64,7 +64,7 @@ class APIAuth {
             "password": password,
             "confirmPassword":password
         ]
-        var request = URLRequest(url: apiK.logInURL!)
+        var request = URLRequest(url: apiK.registerURL!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
