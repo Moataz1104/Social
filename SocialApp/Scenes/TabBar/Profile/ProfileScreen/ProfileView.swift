@@ -105,7 +105,7 @@ extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
                 cell.postContent.text = posts[indexPath.item].content
                 cell.delegate = self
                 cell.indexPath = indexPath
-                cell.isThisMyPost = true
+//                cell.isThisMyPost = true
                 return cell
             }else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddUserInfoCell.identifier, for: indexPath) as! AddUserInfoCell

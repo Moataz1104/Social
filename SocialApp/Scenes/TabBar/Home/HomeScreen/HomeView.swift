@@ -74,6 +74,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         postButton.rx.tap
             .bind(to: viewModel.postButtonSubject)
             .disposed(by: disposeBag)
+        
     }
     
     func bindToPostSubject(postTextView:UITextView){
@@ -120,7 +121,9 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     private func reloadCollectionViewClosure(){
         viewModel.reloadDataClosure = { [weak self] in
             DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                let sectionToReload = IndexSet(integer: 1)
+                self?.collectionView.reloadSections(sectionToReload)
+                
             }
         }
 
@@ -147,20 +150,24 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddPostCell.identifier, for: indexPath) as! AddPostCell
+        
             cell.delegate = self
             bindPostButtonTap(postButton: cell.postButton)
             bindToPostSubject(postTextView: cell.postTextView)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell
-            cell.postContent.text = viewModel.posts[indexPath.item].content /*posts[indexPath.item].content*/
+            let post = viewModel.posts[indexPath.item]
+            
+            cell.configure(with: post)
             cell.delegate = self
             cell.indexPath = indexPath
             cell.viewModel = viewModel
+            cell.disposeBag = disposeBag
             return cell
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {

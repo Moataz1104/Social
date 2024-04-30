@@ -30,7 +30,7 @@ class APIPosts {
         let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
         request.httpBody = jsonData
         
-        APIRequests.baseRequest(request:request, body: body) {[weak self] result in
+        APIRequests.baseSession(request:request, body: body) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
@@ -50,7 +50,7 @@ class APIPosts {
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         
-        APIRequests.baseRequest(request:request, body: nil) {[weak self] result in
+        APIRequests.baseSession(request:request, body: nil) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{

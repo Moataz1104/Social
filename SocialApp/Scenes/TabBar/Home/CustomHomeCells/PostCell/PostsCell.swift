@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 protocol PostsCellDelgate:AnyObject{
     func postCellHeightDidChange(_ height:CGFloat,at indexPath: IndexPath)
@@ -14,7 +17,7 @@ protocol PostsCellDelgate:AnyObject{
 class PostsCell: UICollectionViewCell {
     static let identifier = "PostCell"
     
-    var isThisMyPost = false
+    var disposeBag : DisposeBag?
     
     @IBOutlet weak var userImage:UIImageView!
     @IBOutlet weak var userName:UILabel!
@@ -43,6 +46,10 @@ class PostsCell: UICollectionViewCell {
     
     @IBAction func commentButtonAction(_ sender: Any) {
         viewModel?.showCommentsScreen()
+        
+    }
+    @IBAction func likeButtonAction(_ sender: Any) {
+        print(postId)
     }
     
 
@@ -57,5 +64,14 @@ class PostsCell: UICollectionViewCell {
         
     }
     
+    
+//    MARK: - Post id
+    var postId: String = ""
+
+    func configure(with post: Datum) {
+        postId = post.id ?? ""
+        postContent.text = post.content
+    }
+
 
 }

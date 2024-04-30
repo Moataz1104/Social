@@ -34,11 +34,15 @@ class AddPostCell: UICollectionViewCell  {
         
         addObserverForSelectedImage()
                 
+
+
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
     
 //    MARK: - Selected image observer
 

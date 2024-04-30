@@ -17,49 +17,47 @@ class HomeViewModel{
     let addPostContentSubject = PublishSubject<String>()
     let postButtonSubject = PublishRelay<Void>()
     let errorSubjectMessage = PublishSubject<String>()
+
     
     var posts = [Datum]()
-    var postContent = ""
     
     var reloadDataClosure: (() -> Void)?
-
+    
     
     init(coordinator: HomeCoordinator,disposeBag:DisposeBag) {
         self.coordinator = coordinator
         self.disposeBag = disposeBag
         
         subscribeToPostButton()
-        subscribeToPostContent()
         subscribeToErrorPublisher()
         subscribeToGetPostsPublisher()
         
         getAllPosts()
+        
+        
     }
     
     
     
 //    MARK: - View subscribers
     
+  
     private func subscribeToPostButton(){
         postButtonSubject
-            .do(onNext: {[weak self] _ in
-                guard let self = self else {return}
-                APIPosts.shared.addPost(content: self.postContent, accessToken: APIAuth.shared.accessToken)
+            .withLatestFrom(addPostContentSubject)
+            .subscribe(onNext: {[weak self] content in
+                guard let _ = self else { return }
+                APIPosts.shared.addPost(content: content, accessToken: APIAuth.shared.accessToken)
+                print(content)
+                
             })
-            .subscribe()
             .disposed(by: disposeBag)
     }
+
     
-    private func subscribeToPostContent(){
-        addPostContentSubject
-            .subscribe {[weak self] content in
-                guard let self = self else {return}
-                self.postContent = content
-            }
-            .disposed(by: disposeBag)
-            
-    }
-//    MARK: - API subscribers
+
+    
+    //    MARK: - API subscribers
     
     
     private func subscribeToGetPostsPublisher(){
@@ -69,7 +67,6 @@ class HomeViewModel{
                     if result.message == "success"{
                         if let data = result.data{
                             self?.posts = data
-                            print("posts decoded data \(String(describing: self?.posts))")
                             self?.reloadDataClosure?()
 
                         }
