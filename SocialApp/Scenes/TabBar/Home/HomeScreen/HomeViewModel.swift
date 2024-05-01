@@ -17,6 +17,7 @@ class HomeViewModel{
     let addPostContentSubject = PublishSubject<String>()
     let postButtonSubject = PublishRelay<Void>()
     let errorSubjectMessage = PublishSubject<String>()
+    let likeButtonSubject = PublishRelay<Void>()
 
     
     var posts = [Datum]()

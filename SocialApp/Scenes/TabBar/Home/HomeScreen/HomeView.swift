@@ -23,7 +23,8 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     var cellHeight: CGFloat?
     var postsCellHeights: [IndexPath: CGFloat] = [:]
 
-    
+    var refreshControl = UIRefreshControl()
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -39,8 +40,11 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         
         reloadCollectionViewClosure()
         
+        
+        refreshCollectionView()
 
     }
+
     
     init(viewModel : HomeViewModel,disposeBag:DisposeBag){
         self.viewModel = viewModel
@@ -114,8 +118,22 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
                 
             }
         }
+    }
+    
+    private func refreshCollectionView(){
+        collectionView.refreshControl = refreshControl
+
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 
     }
+    
+    @objc func refreshData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.viewModel.getAllPosts()
+            self.refreshControl.endRefreshing()
+        }
+    }
+
 }
 
 
@@ -153,7 +171,6 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             cell.delegate = self
             cell.indexPath = indexPath
             cell.viewModel = viewModel
-            cell.disposeBag = disposeBag
             return cell
         }
     }

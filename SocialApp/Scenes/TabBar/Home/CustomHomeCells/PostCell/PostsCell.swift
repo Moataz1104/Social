@@ -16,9 +16,7 @@ protocol PostsCellDelgate:AnyObject{
 
 class PostsCell: UICollectionViewCell {
     static let identifier = "PostCell"
-    
-    var disposeBag : DisposeBag?
-    
+        
     @IBOutlet weak var userImage:UIImageView!
     @IBOutlet weak var userName:UILabel!
     @IBOutlet weak var userNickName:UILabel!
@@ -29,15 +27,22 @@ class PostsCell: UICollectionViewCell {
     
     var viewModel : HomeViewModel?
     var indexPath: IndexPath?
+    var disposeBag : DisposeBag? = DisposeBag()
+
     weak var delegate : PostsCellDelgate?
     override func awakeFromNib() {
         super.awakeFromNib()
         
         userImage.layer.cornerRadius = userImage.bounds.width / 2
         userImage.clipsToBounds = true
-        
-
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
+
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
