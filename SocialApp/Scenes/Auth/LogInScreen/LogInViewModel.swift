@@ -91,9 +91,9 @@ class LogInViewModel {
         Observable
             .combineLatest(isEmailFieldNotEmpty(), isPasswordFieldNotEmpty())
             .map { tf1,tf2 in
-                return tf1 && tf2
+                return  true /*tf1 && tf2*/
             }
-            .startWith(false)
+//            .startWith(false)
     }
 
 

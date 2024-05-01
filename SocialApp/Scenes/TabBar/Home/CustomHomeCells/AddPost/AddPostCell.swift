@@ -19,6 +19,7 @@ class AddPostCell: UICollectionViewCell  {
     
     static let identifier = "AddPostCell"
     weak var delegate : AddPostCellDelegate?
+    var disposeBag : DisposeBag? = DisposeBag()
     
     @IBOutlet weak var postTextView: UITextView!
     
@@ -33,10 +34,14 @@ class AddPostCell: UICollectionViewCell  {
         configureUi()
         
         addObserverForSelectedImage()
-                
-
-
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        
+        disposeBag = DisposeBag()
+    }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self)

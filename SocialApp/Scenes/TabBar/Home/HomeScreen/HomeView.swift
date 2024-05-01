@@ -22,7 +22,6 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     var cellHeight: CGFloat?
     var postsCellHeights: [IndexPath: CGFloat] = [:]
-    var posts: [Post] = []
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -35,7 +34,6 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
         collectionView.dataSource = self
         collectionView.delegate = self
         registerCells()
-        generateFakeData()
         
         showingNetworkErrorAlert()
         
@@ -70,16 +68,17 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     }
     
 //    MARK: - RX Binding
-    func bindPostButtonTap(postButton:UIButton){
+    func bindPostButtonTap(postButton:UIButton , bag:DisposeBag){
         postButton.rx.tap
             .bind(to: viewModel.postButtonSubject)
-            .disposed(by: disposeBag)
+            .disposed(by: bag)
         
     }
     
-    func bindToPostSubject(postTextView:UITextView){
+    func bindToPostSubject(postTextView:UITextView,bag:DisposeBag){
         postTextView.rx.text.orEmpty.bind(to: viewModel.addPostContentSubject)
-            .disposed(by: disposeBag)
+            
+            .disposed(by: bag)
 
     }
 
@@ -100,17 +99,6 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     
     // MARK: - Privates
-    func generateFakeData() {
-        let post1 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
-        posts.append(post1)
-        let post2 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is")
-        posts.append(post2)
-        let post3 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
-        posts.append(post3)
-        let post4 = Post(title: "", content: "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈")
-        posts.append(post4)
-        
-    }
     
     private func registerCells(){
         collectionView.register(UINib(nibName: AddPostCell.identifier, bundle: nil), forCellWithReuseIdentifier: AddPostCell.identifier)
@@ -150,10 +138,12 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddPostCell.identifier, for: indexPath) as! AddPostCell
-        
             cell.delegate = self
-            bindPostButtonTap(postButton: cell.postButton)
-            bindToPostSubject(postTextView: cell.postTextView)
+            if let bag = cell.disposeBag{
+                bindPostButtonTap(postButton: cell.postButton, bag: bag)
+                bindToPostSubject(postTextView: cell.postTextView, bag: bag)
+            }
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell

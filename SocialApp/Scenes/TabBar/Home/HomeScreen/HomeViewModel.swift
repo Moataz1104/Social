@@ -24,6 +24,7 @@ class HomeViewModel{
     var reloadDataClosure: (() -> Void)?
     
     
+    
     init(coordinator: HomeCoordinator,disposeBag:DisposeBag) {
         self.coordinator = coordinator
         self.disposeBag = disposeBag
@@ -42,17 +43,25 @@ class HomeViewModel{
 //    MARK: - View subscribers
     
   
+    
     private func subscribeToPostButton(){
         postButtonSubject
+            .throttle(.milliseconds(1000), latest: true, scheduler: MainScheduler.asyncInstance)
             .withLatestFrom(addPostContentSubject)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: {[weak self] content in
-                guard let _ = self else { return }
+                guard let self = self else { return }
                 APIPosts.shared.addPost(content: content, accessToken: APIAuth.shared.accessToken)
+                self.getAllPosts()
+                self.reloadDataClosure?()
+                
                 print(content)
+                
                 
             })
             .disposed(by: disposeBag)
     }
+    
 
     
 
@@ -62,13 +71,14 @@ class HomeViewModel{
     
     private func subscribeToGetPostsPublisher(){
         APIPosts.shared.getPostsResultPublisher
+            .observe(on: MainScheduler.instance)
             .subscribe {[weak self] event in
                 if let result = event.event.element as? PostModel{
                     if result.message == "success"{
                         if let data = result.data{
-                            self?.posts = data
+                            self?.posts = data.reversed()
                             self?.reloadDataClosure?()
-
+                            
                         }
                     }
                 }
