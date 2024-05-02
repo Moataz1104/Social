@@ -202,8 +202,15 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
 
 
 extension HomeView: PostsCellDelegate {
+    
     func postCellDidLike(_ postId: String) {
         viewModel.postId = postId
         viewModel.likeButtonSubject.accept(())
     }
+    
+    func postCellDidPressComment(_ postId: String) {
+        viewModel.postId = postId
+        viewModel.commentButtonSubject.accept(())
+    }
+
 }

@@ -16,6 +16,8 @@ protocol PostsCellDelgate:AnyObject{
 
 protocol PostsCellDelegate: AnyObject {
     func postCellDidLike(_ postId: String)
+    func postCellDidPressComment(_ postId: String)
+
 }
 
 
@@ -57,7 +59,7 @@ class PostsCell: UICollectionViewCell {
     }
     
     @IBAction func commentButtonAction(_ sender: Any) {
-        viewModel?.showCommentsScreen()
+        postDelegate?.postCellDidPressComment(postId)
         
     }
     @IBAction func likeButtonAction(_ sender: Any) {

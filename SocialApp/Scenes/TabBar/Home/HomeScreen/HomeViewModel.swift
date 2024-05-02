@@ -18,7 +18,9 @@ class HomeViewModel{
     let postButtonSubject = PublishRelay<Void>()
     let errorSubjectMessage = PublishSubject<String>()
     let likeButtonSubject = PublishRelay<Void>()
+    let commentButtonSubject = PublishRelay<Void>()
 
+    
     var postId = ""
     
     var posts = [Datum]()
@@ -35,7 +37,7 @@ class HomeViewModel{
         subscribeToErrorPublisher()
         subscribeToGetPostsPublisher()
         subscribeToLikeButton()
-        
+        subscribeToCommentButton()
         
         getAllPosts()
         
@@ -60,7 +62,7 @@ class HomeViewModel{
                     self.getAllPosts()
                 }
                 
-                print(content)
+                print(APIAuth.shared.accessToken)
                 
                 
             })
@@ -82,7 +84,14 @@ class HomeViewModel{
             .disposed(by: disposeBag)
 
     }
-    
+    private func subscribeToCommentButton(){
+        commentButtonSubject
+            .subscribe {[weak self] _ in
+                guard let self = self else {return}
+                self.showCommentsScreen()
+            }
+            .disposed(by: disposeBag)
+    }
 
     
     //    MARK: - API subscribers
