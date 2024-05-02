@@ -56,8 +56,9 @@ class HomeViewModel{
             .subscribe(onNext: {[weak self] content in
                 guard let self = self else { return }
                 APIPosts.shared.addPost(content: content, accessToken: APIAuth.shared.accessToken)
-                self.getAllPosts()
-                self.reloadDataClosure?()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    self.getAllPosts()
+                }
                 
                 print(content)
                 
@@ -71,8 +72,12 @@ class HomeViewModel{
 
     private func subscribeToLikeButton(){
         likeButtonSubject
-            .subscribe { _ in
-                
+            .subscribe {[weak self] _ in
+                guard let self = self else {return}
+                APIPostInteractions.shared.addLikeToPost(postId: self.postId, accessToken: APIAuth.shared.accessToken)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    self.getAllPosts()
+                }
             }
             .disposed(by: disposeBag)
 

@@ -83,6 +83,9 @@ class PostsCell: UICollectionViewCell {
     func configure(with post: Datum) {
         postId = post.id ?? ""
         postContent.text = post.content
+        if let likesCount = post.likesCount{
+            numberOfLikes.text = "\(likesCount)"
+        }
     }
 
 

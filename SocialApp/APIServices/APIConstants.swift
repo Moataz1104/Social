@@ -19,11 +19,9 @@ struct apiK{
     static let addGetPostURL =
     URL(string: "https://social-app-api-944j.onrender.com/api/v1/post?limit=250")
     
-    static let addLikeURL =
-    URL(string:"https://social-app-api-944j.onrender.com/api/v1/post/660cd6115f7529dd109c2622/like")
+    static let postInteractionsURL =
+    URL(string:"https://social-app-api-944j.onrender.com/api/v1/post")
     
-    static let addCommentURL =
-    URL(string:"https://social-app-api-944j.onrender.com/api/v1/post/660b65bb5922822130f468a3/comment")
 }
 
 /*

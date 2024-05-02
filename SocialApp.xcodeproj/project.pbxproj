@@ -62,6 +62,7 @@
 		007289322BDF1253007CF4D7 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 007289302BDF1217007CF4D7 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289342BDF1EE3007CF4D7 /* PostModel.swift */; };
 		007289372BDF4B1A007CF4D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289362BDF4B1A007CF4D7 /* UserModel.swift */; };
+		007289392BE34E62007CF4D7 /* APIPostInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289382BE34E62007CF4D7 /* APIPostInteractions.swift */; };
 		0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */; };
 		0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */; };
 		0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */; };
@@ -143,6 +144,7 @@
 		006BB1782BC3C0E200A0159D /* AddPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
 		007289342BDF1EE3007CF4D7 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		007289362BDF4B1A007CF4D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		007289382BE34E62007CF4D7 /* APIPostInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPostInteractions.swift; sourceTree = "<group>"; };
 		0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionManager.swift; sourceTree = "<group>"; };
 		0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiCell.swift; sourceTree = "<group>"; };
 		0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiCell.xib; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				004DB38D2BD3F4DB00F279E9 /* APIRequests.swift */,
 				006BB1402BBFA0D100A0159D /* APIAuth.swift */,
 				004DB3892BD3F0E200F279E9 /* APIPosts.swift */,
+				007289382BE34E62007CF4D7 /* APIPostInteractions.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				006BB1672BC3966F00A0159D /* HomeView.swift in Sources */,
 				009EB3DC2BCCEEB5006F19C4 /* AddUserInfoCell.swift in Sources */,
 				006BB10C2BBBB46300A0159D /* AuthTextFields.swift in Sources */,
+				007289392BE34E62007CF4D7 /* APIPostInteractions.swift in Sources */,
 				009EB3D12BCBB614006F19C4 /* CommentCell.swift in Sources */,
 				00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */,
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
