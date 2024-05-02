@@ -171,6 +171,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             cell.delegate = self
             cell.indexPath = indexPath
             cell.viewModel = viewModel
+            cell.postDelegate = self
             return cell
         }
     }
@@ -199,3 +200,10 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
 }
 
 
+
+extension HomeView: PostsCellDelegate {
+    func postCellDidLike(_ postId: String) {
+        viewModel.postId = postId
+        viewModel.likeButtonSubject.accept(())
+    }
+}

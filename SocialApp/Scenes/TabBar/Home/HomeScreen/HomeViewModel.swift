@@ -19,6 +19,7 @@ class HomeViewModel{
     let errorSubjectMessage = PublishSubject<String>()
     let likeButtonSubject = PublishRelay<Void>()
 
+    var postId = ""
     
     var posts = [Datum]()
     
@@ -33,6 +34,8 @@ class HomeViewModel{
         subscribeToPostButton()
         subscribeToErrorPublisher()
         subscribeToGetPostsPublisher()
+        subscribeToLikeButton()
+        
         
         getAllPosts()
         
@@ -41,7 +44,7 @@ class HomeViewModel{
     
     
     
-//    MARK: - View subscribers
+//    MARK: - Add Post Cell subscribers
     
   
     
@@ -64,6 +67,16 @@ class HomeViewModel{
     }
     
 
+//    MARK: - Post Cell subscribers
+
+    private func subscribeToLikeButton(){
+        likeButtonSubject
+            .subscribe { _ in
+                
+            }
+            .disposed(by: disposeBag)
+
+    }
     
 
     

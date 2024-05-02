@@ -14,6 +14,11 @@ protocol PostsCellDelgate:AnyObject{
     func postCellHeightDidChange(_ height:CGFloat,at indexPath: IndexPath)
 }
 
+protocol PostsCellDelegate: AnyObject {
+    func postCellDidLike(_ postId: String)
+}
+
+
 class PostsCell: UICollectionViewCell {
     static let identifier = "PostCell"
         
@@ -30,6 +35,8 @@ class PostsCell: UICollectionViewCell {
     var disposeBag : DisposeBag? = DisposeBag()
 
     weak var delegate : PostsCellDelgate?
+    weak var postDelegate: PostsCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -54,7 +61,7 @@ class PostsCell: UICollectionViewCell {
         
     }
     @IBAction func likeButtonAction(_ sender: Any) {
-        print(postId)
+        postDelegate?.postCellDidLike(postId)
     }
     
 
