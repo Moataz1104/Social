@@ -63,6 +63,8 @@
 		007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289342BDF1EE3007CF4D7 /* PostModel.swift */; };
 		007289372BDF4B1A007CF4D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289362BDF4B1A007CF4D7 /* UserModel.swift */; };
 		007289392BE34E62007CF4D7 /* APIPostInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007289382BE34E62007CF4D7 /* APIPostInteractions.swift */; };
+		0072893B2BE73C92007CF4D7 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072893A2BE73C92007CF4D7 /* CommentModel.swift */; };
+		0072893D2BE73E4F007CF4D7 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072893C2BE73E4F007CF4D7 /* CommentViewModel.swift */; };
 		0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */; };
 		0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */; };
 		0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */; };
@@ -145,6 +147,8 @@
 		007289342BDF1EE3007CF4D7 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		007289362BDF4B1A007CF4D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		007289382BE34E62007CF4D7 /* APIPostInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPostInteractions.swift; sourceTree = "<group>"; };
+		0072893A2BE73C92007CF4D7 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		0072893C2BE73E4F007CF4D7 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		0099BE802BCD4096008DE9E0 /* ImageSelectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionManager.swift; sourceTree = "<group>"; };
 		0099BE832BCE6DBB008DE9E0 /* NotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiCell.swift; sourceTree = "<group>"; };
 		0099BE842BCE6DBB008DE9E0 /* NotifiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiCell.xib; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 				004DB3872BD039EC00F279E9 /* AuthModel.swift */,
 				007289342BDF1EE3007CF4D7 /* PostModel.swift */,
 				007289362BDF4B1A007CF4D7 /* UserModel.swift */,
+				0072893A2BE73C92007CF4D7 /* CommentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 			children = (
 				00D96B242BC92E8E00D403AC /* CommentsView.swift */,
 				00D96B252BC92E8E00D403AC /* CommentsView.xib */,
+				0072893C2BE73E4F007CF4D7 /* CommentViewModel.swift */,
 			);
 			path = CommentScreen;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 				006BB14C2BC252A800A0159D /* NotificationCoordinator.swift in Sources */,
 				006BB1102BBBCC6700A0159D /* LogInViewModel.swift in Sources */,
 				006BB10E2BBBBA1500A0159D /* MainButton.swift in Sources */,
+				0072893D2BE73E4F007CF4D7 /* CommentViewModel.swift in Sources */,
 				004DB3852BD0070700F279E9 /* MessageCell.swift in Sources */,
 				00D96B262BC92E8E00D403AC /* CommentsView.swift in Sources */,
 				006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */,
@@ -646,6 +653,7 @@
 				006BB0E42BBA7B3C00A0159D /* SceneDelegate.swift in Sources */,
 				006BB1092BBB91DD00A0159D /* EmailButton.swift in Sources */,
 				004DB37C2BD001A300F279E9 /* MessagesView.swift in Sources */,
+				0072893B2BE73C92007CF4D7 /* CommentModel.swift in Sources */,
 				004DB3882BD039EC00F279E9 /* AuthModel.swift in Sources */,
 				0099BE812BCD4096008DE9E0 /* ImageSelectionManager.swift in Sources */,
 				004DB38A2BD3F0E200F279E9 /* APIPosts.swift in Sources */,

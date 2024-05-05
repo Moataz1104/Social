@@ -14,10 +14,10 @@ class CommentsView: UIViewController , CommentCellDelegate {
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var scrollView:UIScrollView!
     
-    var comments: [String] = [] 
     var commentsCellHeights: [IndexPath: CGFloat] = [:]
+    let viewModel : CommentViewModel
 
-
+//    MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Comments"
@@ -30,30 +30,33 @@ class CommentsView: UIViewController , CommentCellDelegate {
         keyBoardWillAppear()
         keyBoardWillDisappear()
         
-        generateFakeData()
+        reloadCollectionViewClosure()
         registerCell()
         
     }
-    func generateFakeData() {
-        let comment1 = "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈"
-        comments.append(comment1)
-        
-        let comment2 = "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necIn today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈essity for businesses of all sizes. 📈"
-        comments.append(comment2)
-
-        let comment3 = "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a nIn today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈ecessity for businesses of all sizes. 📈"
-        comments.append(comment3)
-
-        let comment4 = "In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a nIn today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈In today's fast-paced, digitally driven world, digital marketing is not just a strategy; it's a necessity for businesses of all sizes. 📈ecessity for businesses of all sizes. 📈"
-        comments.append(comment4)
-
-        
+    init(viewModel:CommentViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+// MARK: - Privates
     private func registerCell(){
         collectionView.register(UINib(nibName: CommentCell.cellIdentifier, bundle: nil), forCellWithReuseIdentifier: CommentCell.cellIdentifier)
     }
+    private func reloadCollectionViewClosure(){
+        viewModel.reloadDataClosure = { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+
     
+//    MARK: - Height delegate
     func commentCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
         commentsCellHeights[indexPath] = height
         collectionView.performBatchUpdates(nil, completion: nil)
@@ -69,7 +72,7 @@ class CommentsView: UIViewController , CommentCellDelegate {
 
 extension CommentsView : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return comments.count
+        return viewModel.commentData?.result ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +80,8 @@ extension CommentsView : UICollectionViewDataSource, UICollectionViewDelegateFlo
                 
         cell.indexPath = indexPath
         cell.delegate = self
-        cell.commentContent.text = comments[indexPath.item]
+        cell.commentContent.text =
+        viewModel.commentData?.data?[indexPath.item].content ?? ""
         return cell
     }
     

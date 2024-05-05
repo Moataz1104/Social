@@ -41,7 +41,6 @@ class HomeViewModel{
         
         getAllPosts()
         
-        
     }
     
     
@@ -88,7 +87,8 @@ class HomeViewModel{
         commentButtonSubject
             .subscribe {[weak self] _ in
                 guard let self = self else {return}
-                self.showCommentsScreen()
+                self.showCommentsScreen(postID: self.postId)
+                
             }
             .disposed(by: disposeBag)
     }
@@ -145,8 +145,8 @@ class HomeViewModel{
     
 //    Navigation
     
-    func showCommentsScreen(){
-        coordinator?.showCommentScreen()
+    func showCommentsScreen(postID:String){
+        coordinator?.showCommentScreen(postId: postID)
     }
     
     

@@ -25,8 +25,10 @@ class HomeCoordinator:Coordinator{
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showCommentScreen(){
-        let vc = CommentsView()
+    func showCommentScreen(postId:String){
+        let disposeBag = DisposeBag()
+        let viewModel = CommentViewModel(postID: postId, disposeBag: disposeBag)
+        let vc = CommentsView(viewModel: viewModel)
         let newNavController = UINavigationController(rootViewController: vc)
         newNavController.modalPresentationStyle = .pageSheet
         navigationController.present(newNavController, animated: true, completion: nil)

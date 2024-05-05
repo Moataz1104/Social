@@ -14,8 +14,8 @@ class APIPosts {
     private init(){}
     
     let errorPublisher = PublishRelay<Error>()
-    let addPostResultPublisher = PublishSubject<Any>()
-    let getPostsResultPublisher = PublishSubject<Any>()
+    let addPostResultPublisher = PublishRelay<Any>()
+    let getPostsResultPublisher = PublishRelay<Any>()
     
     func addPost(content:String, accessToken : String){
         print("request add post sent")
@@ -35,7 +35,7 @@ class APIPosts {
             case .success(let data):
                 if let data = data{
                     print(data)
-                    self?.addPostResultPublisher.onNext(data)
+                    self?.addPostResultPublisher.accept(data)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -57,7 +57,7 @@ class APIPosts {
                     print("posts data \(data)")
                     do{
                         let decodedData = try JSONDecoder().decode(PostModel.self, from: data)
-                        self?.getPostsResultPublisher.onNext(decodedData)
+                        self?.getPostsResultPublisher.accept(decodedData)
                     }catch{
                         print(error.localizedDescription)
                     }
