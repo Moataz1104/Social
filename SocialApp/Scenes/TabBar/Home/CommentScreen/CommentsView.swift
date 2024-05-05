@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class CommentsView: UIViewController , CommentCellDelegate {
     
@@ -13,17 +16,19 @@ class CommentsView: UIViewController , CommentCellDelegate {
     @IBOutlet weak var contentView : UIView!
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var scrollView:UIScrollView!
+    @IBOutlet weak var commentTextField: UITextField!
     
     var commentsCellHeights: [IndexPath: CGFloat] = [:]
     let viewModel : CommentViewModel
-
+    let disposeBag : DisposeBag
 //    MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Comments"
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        commentTextField.delegate = self
+        
         userImage.layer.cornerRadius = userImage.bounds.width / 2
         userImage.clipsToBounds = true
         
@@ -34,8 +39,9 @@ class CommentsView: UIViewController , CommentCellDelegate {
         registerCell()
         
     }
-    init(viewModel:CommentViewModel){
+    init(viewModel:CommentViewModel,disposeBag:DisposeBag){
         self.viewModel = viewModel
+        self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -119,4 +125,14 @@ extension CommentsView{
     
 }
 
+extension CommentsView:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let content = textField.text{
+            viewModel.addComment(content: content)
+        }
+        textField.text = ""
+        return true
+    }
+}
 

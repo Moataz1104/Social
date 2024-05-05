@@ -22,6 +22,10 @@ class CommentViewModel{
         getAllComments()
     }
     
+    
+    
+    
+    
 //    MARK: - API Subscribtion
     
     private func subscribeToCommentsDataPublosher(){
@@ -32,6 +36,14 @@ class CommentViewModel{
                 self?.reloadDataClosure?()
             })
             .disposed(by: disposeBag)
+    }
+    
+    func addComment(content:String){
+        print("postID: \(postID)\ncontent: \(content)")
+        APIPostInteractions.shared.addCommentRequest(postId: postID, content: content, accessToken: APIAuth.shared.accessToken)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){[weak self] in
+            self?.getAllComments()
+        }
     }
         
     private func getAllComments(){

@@ -27,7 +27,7 @@ class APIPostInteractions{
         request.httpMethod = "POST"
 
         print(url!)
-        APIRequests.baseSession(request:request, body: nil) {[weak self] result in
+        APIRequests.baseSession(request:request) {[weak self] result in
             guard let _ = self else{return}
             switch result{
             case .success(let data):
@@ -53,7 +53,7 @@ class APIPostInteractions{
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
         
-        APIRequests.baseSession(request:request, body: nil) {[weak self] result in
+        APIRequests.baseSession(request:request) {[weak self] result in
             guard let self = self else{return}
             switch result{
             case .success(let data):
@@ -74,5 +74,42 @@ class APIPostInteractions{
 
     }
     
+    func addCommentRequest(postId:String,content:String,accessToken:String){
+        let postInteractionsURL = apiK.postInteractionsURL!
+        var urlComponents = URLComponents(url: postInteractionsURL, resolvingAgainstBaseURL: false)
+        urlComponents?.path.append("/\(postId)/comment")
+        let url = urlComponents?.url
+        
+        var request = URLRequest(url: url!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        
+        let body = ["content":content]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: body)
+            request.httpBody = jsonData
+        } catch {
+            print("Error serializing JSON: \(error)")
+            return
+        }
+
+        
+        APIRequests.baseSession(request:request) {[weak self] result in
+            guard let _ = self else{return}
+            switch result{
+            case .success(let data):
+                if let data = data{
+                    print(data)
+                    print("add Comment success")
+                }
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            }
+        }
+
+    }
+
 
 }

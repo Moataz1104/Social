@@ -32,7 +32,7 @@ class APIAuth {
         let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
         request.httpBody = jsonData
 
-        APIRequests.baseSession( request: request, body: body) {[weak self] result in
+        APIRequests.baseSession( request: request) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{
@@ -70,7 +70,7 @@ class APIAuth {
         let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
         request.httpBody = jsonData
 
-        APIRequests.baseSession(request:request, body: body) {[weak self] result in
+        APIRequests.baseSession(request:request) {[weak self] result in
             switch result{
             case .success(let data):
                 if let data = data{

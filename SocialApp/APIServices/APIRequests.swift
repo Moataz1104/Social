@@ -9,7 +9,7 @@ import Foundation
 
 struct APIRequests{
     
-    static func baseSession(request:URLRequest,body:[String:String]?,completion: @escaping (Result<Data?,Error>) ->Void){
+    static func baseSession(request:URLRequest,completion: @escaping (Result<Data?,Error>) ->Void){
 
         
         let session = URLSession.shared
