@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0007D3352BE9DCD100B1DB2D /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */; };
 		0007D3372BEA18CF00B1DB2D /* APIUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3362BEA18CF00B1DB2D /* APIUsers.swift */; };
+		0007D33A2BEA268900B1DB2D /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3392BEA268900B1DB2D /* DateFormat.swift */; };
 		003613932BE9C78400FF519F /* UsersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613922BE9C78400FF519F /* UsersView.xib */; };
 		003613942BE9C78400FF519F /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003613912BE9C78400FF519F /* UsersView.swift */; };
 		003613982BE9C7E400FF519F /* UsersDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613972BE9C7E400FF519F /* UsersDetailsCell.xib */; };
@@ -106,6 +107,7 @@
 /* Begin PBXFileReference section */
 		0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		0007D3362BEA18CF00B1DB2D /* APIUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUsers.swift; sourceTree = "<group>"; };
+		0007D3392BEA268900B1DB2D /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		003613912BE9C78400FF519F /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		003613922BE9C78400FF519F /* UsersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersView.xib; sourceTree = "<group>"; };
 		003613962BE9C7E400FF519F /* UsersDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailsCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0007D3382BEA267700B1DB2D /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				0007D3392BEA268900B1DB2D /* DateFormat.swift */,
+			);
+			path = Dates;
+			sourceTree = "<group>";
+		};
 		0020034C2BE89C7D00A44738 /* OtherUsersScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +370,7 @@
 		006BB11C2BBBD00300A0159D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0007D3382BEA267700B1DB2D /* Dates */,
 				006BB0FF2BBB8CEF00A0159D /* CustomViews */,
 				006BB11D2BBBD1C900A0159D /* Coordinator */,
 				006BB1392BBE747C00A0159D /* TextFieldsValidation */,
@@ -715,6 +726,7 @@
 				006BB13B2BBE749700A0159D /* Validation.swift in Sources */,
 				006BB1032BBB8D8700A0159D /* GoogleButton.swift in Sources */,
 				004DB38E2BD3F4DB00F279E9 /* APIRequests.swift in Sources */,
+				0007D33A2BEA268900B1DB2D /* DateFormat.swift in Sources */,
 				006BB1482BC2528D00A0159D /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

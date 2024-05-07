@@ -101,9 +101,11 @@ class PostsCell: UICollectionViewCell {
         postContent.text = post.content
         userName.text = post.createdBy?.name ?? "Name"
         userNickName.text = post.createdBy?.userName ?? "UserName"
+        postTime.text = DateFormat.timeAgoString(from: post.createdAt ?? "")
         if let likesCount = post.likesCount{
             numberOfLikes.text = "\(likesCount)"
         }
+        
     }
 
 
