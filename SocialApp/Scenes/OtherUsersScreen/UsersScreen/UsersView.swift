@@ -71,8 +71,8 @@ extension UsersView: UICollectionViewDataSource,UICollectionViewDelegateFlowLayo
             "\(viewModel.user?.followers?.count ?? 0)"
             cell.numberOfFollowing.text =
             "\(viewModel.user?.following?.count ?? 0)"
-            cell.nameOfUser.text = viewModel.user?.name
-            cell.nickNameOfUser.text = viewModel.user?.userName
+            cell.nameOfUser.text = viewModel.user?.name ?? "Name"
+            cell.nickNameOfUser.text = viewModel.user?.userName ?? "UserName"
             
             return cell
         }else{
