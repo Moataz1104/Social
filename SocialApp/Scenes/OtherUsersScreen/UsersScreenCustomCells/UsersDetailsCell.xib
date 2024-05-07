@@ -146,6 +146,11 @@
             <connections>
                 <outlet property="followButtonOutlet" destination="eAC-PR-Kkd" id="1Wk-g5-Rno"/>
                 <outlet property="messageButtonOutlet" destination="vgq-1K-jat" id="UbC-Xr-VGG"/>
+                <outlet property="nameOfUser" destination="Ia1-M8-Fiq" id="U4f-Wq-IEa"/>
+                <outlet property="nickNameOfUser" destination="XBA-L3-9qg" id="75H-7V-Zt6"/>
+                <outlet property="numberOfFollowers" destination="05z-nH-fIN" id="2ES-JW-eTH"/>
+                <outlet property="numberOfFollowing" destination="ccR-g4-XnF" id="yQD-CC-RkO"/>
+                <outlet property="numberOfPosts" destination="MXU-cj-bBX" id="4GV-wJ-zCY"/>
                 <outlet property="userImage" destination="pQO-eh-p3T" id="DOb-x9-Ahz"/>
             </connections>
             <point key="canvasLocation" x="203.0534351145038" y="169.01408450704227"/>

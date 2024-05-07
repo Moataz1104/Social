@@ -14,6 +14,12 @@ class UsersDetailsCell: UICollectionViewCell {
     @IBOutlet weak var followButtonOutlet: UIButton!
     @IBOutlet weak var messageButtonOutlet: UIButton!
     @IBOutlet weak var userImage: UIImageView!
+     
+    @IBOutlet weak var nickNameOfUser: UILabel!
+    @IBOutlet weak var nameOfUser: UILabel!
+    @IBOutlet weak var numberOfFollowing: UILabel!
+    @IBOutlet weak var numberOfFollowers: UILabel!
+    @IBOutlet weak var numberOfPosts: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         configUi()

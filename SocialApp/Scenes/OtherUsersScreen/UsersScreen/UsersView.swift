@@ -67,6 +67,13 @@ extension UsersView: UICollectionViewDataSource,UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsersDetailsCell.identifier, for: indexPath) as! UsersDetailsCell
+            cell.numberOfFollowers.text =
+            "\(viewModel.user?.followers?.count ?? 0)"
+            cell.numberOfFollowing.text =
+            "\(viewModel.user?.following?.count ?? 0)"
+            cell.nameOfUser.text = viewModel.user?.name
+            cell.nickNameOfUser.text = viewModel.user?.userName
+            
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsCell.identifier, for: indexPath) as! PostsCell

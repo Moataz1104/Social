@@ -27,6 +27,8 @@ class UsersViewModel{
     }
     
     
+//    MARK: - API subscribers
+    
     func getUser(){
         APIUsers.shared.getUser(userId: userId)
     }
