@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ProfileView: UIViewController {
+class MyProfileView: UIViewController {
 
     @IBOutlet weak var collectionView:UICollectionView!
-    private var viewModel : ProfileViewModel
+    private var viewModel : MyProfileViewModel
     
     var postsCellHeights: [IndexPath: CGFloat] = [:]
     var posts: [Post] = []
@@ -31,7 +31,7 @@ class ProfileView: UIViewController {
         keyBoardWillDisappear()
 
     }
-    init(viewModel: ProfileViewModel ) {
+    init(viewModel: MyProfileViewModel ) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,7 +52,7 @@ class ProfileView: UIViewController {
 
 
     private func registerCell(){
-        collectionView.register(UINib(nibName: UserProfileDetailsCell.identifier, bundle: nil), forCellWithReuseIdentifier: UserProfileDetailsCell.identifier)
+        collectionView.register(UINib(nibName: MyProfileDetailsCell.identifier, bundle: nil), forCellWithReuseIdentifier: MyProfileDetailsCell.identifier)
         collectionView.register(UINib(nibName: PostsCell.identifier, bundle: nil),forCellWithReuseIdentifier: PostsCell.identifier)
         collectionView.register(UINib(nibName: AddUserInfoCell.identifier, bundle: nil),forCellWithReuseIdentifier: AddUserInfoCell.identifier)
 
@@ -75,7 +75,7 @@ class ProfileView: UIViewController {
 }
 
 
-extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+extension MyProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -96,7 +96,7 @@ extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserProfileDetailsCell.identifier, for: indexPath) as! UserProfileDetailsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyProfileDetailsCell.identifier, for: indexPath) as! MyProfileDetailsCell
             cell.delegate = self
             return cell
         }else{
@@ -139,7 +139,7 @@ extension ProfileView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
 }
 
 
-extension ProfileView : UserProfileDetailsCellDelegate{
+extension MyProfileView : MyProfileDetailsCellDelegate{
     func tabBarItemSelected(tag: Int) {
         if tag == 1000{
             isMyPostsSelected = true
@@ -154,7 +154,7 @@ extension ProfileView : UserProfileDetailsCellDelegate{
     
 }
 
-extension ProfileView : PostsCellDelgate{
+extension MyProfileView : PostsCellDelgate{
     func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
         postsCellHeights[indexPath] = height
         collectionView.performBatchUpdates(nil, completion: nil)
@@ -163,7 +163,7 @@ extension ProfileView : PostsCellDelgate{
 }
 
 
-extension ProfileView{
+extension MyProfileView{
     private func keyBoardWillAppear(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
     }

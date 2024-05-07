@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProfileViewModel{
+class MyProfileViewModel{
     weak var coordinator : ProfileCoordinator?
     
     init(coordinator: ProfileCoordinator) {

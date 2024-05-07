@@ -35,5 +35,10 @@ class HomeCoordinator:Coordinator{
 
     }
     
+    func showUsersScreen(){
+        let vc = UsersView()
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     
 }

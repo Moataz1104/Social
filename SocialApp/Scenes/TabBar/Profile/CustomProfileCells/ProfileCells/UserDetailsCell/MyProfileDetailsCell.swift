@@ -8,13 +8,13 @@
 import UIKit
 
 
-protocol UserProfileDetailsCellDelegate: AnyObject {
+protocol MyProfileDetailsCellDelegate: AnyObject {
     func tabBarItemSelected(tag: Int)
 }
 
-class UserProfileDetailsCell: UICollectionViewCell {
+class MyProfileDetailsCell: UICollectionViewCell {
     static let identifier = "UserProfileDetailsCell"
-    weak var delegate:UserProfileDetailsCellDelegate?
+    weak var delegate:MyProfileDetailsCellDelegate?
     
     @IBOutlet weak var userImage:UIImageView!
     @IBOutlet weak var tabBar:UITabBar!
@@ -57,7 +57,7 @@ class UserProfileDetailsCell: UICollectionViewCell {
 
 
 
-extension UserProfileDetailsCell: UITabBarDelegate {
+extension MyProfileDetailsCell: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         delegate?.tabBarItemSelected(tag: item.tag)
     }

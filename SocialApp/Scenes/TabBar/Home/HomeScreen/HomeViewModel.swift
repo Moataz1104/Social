@@ -150,7 +150,9 @@ class HomeViewModel{
     }
     
     
-    
+    func showUsersScreen(){
+        coordinator?.showUsersScreen()
+    }
     
 
 

@@ -27,8 +27,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SyR-rR-joy">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-mk-fMw">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-mk-fMw">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="gYV-BX-ltm"/>
                                                     <constraint firstAttribute="width" constant="50" id="zvD-CC-rnp"/>

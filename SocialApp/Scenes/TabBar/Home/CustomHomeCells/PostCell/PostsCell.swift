@@ -39,24 +39,27 @@ class PostsCell: UICollectionViewCell {
     weak var delegate : PostsCellDelgate?
     weak var postDelegate: PostsCellDelegate?
 
+    
+//    MARK: - Cell Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
         userImage.layer.cornerRadius = userImage.bounds.width / 2
         userImage.clipsToBounds = true
+        
+        addTapGestureToImage()
+
     }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
-
-
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         getPostCellHeight()
     }
+    
+//    MARK: - Actions
     
     @IBAction func commentButtonAction(_ sender: Any) {
         postDelegate?.postCellDidPressComment(postId)
@@ -66,7 +69,17 @@ class PostsCell: UICollectionViewCell {
         postDelegate?.postCellDidLike(postId)
     }
     
+    private func addTapGestureToImage(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapGesture(_:)))
+        userImage.addGestureRecognizer(tapGesture)
+    }
+    @objc func imageTapGesture(_ sender: UITapGestureRecognizer) {
+        viewModel?.showUsersScreen()
+    }
 
+    
+    
+//    MARK: - cell height
     
     func getPostCellHeight(){
         let maxSize = CGSize(width: postContent.bounds.width, height: CGFloat.greatestFiniteMagnitude)

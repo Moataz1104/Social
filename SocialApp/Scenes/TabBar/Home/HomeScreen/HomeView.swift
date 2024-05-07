@@ -106,7 +106,7 @@ class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
     
     private func registerCells(){
         collectionView.register(UINib(nibName: AddPostCell.identifier, bundle: nil), forCellWithReuseIdentifier: AddPostCell.identifier)
-        collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
+        collectionView.register(UINib(nibName: PostsCell.identifier, bundle: nil), forCellWithReuseIdentifier: PostsCell.identifier)
     }
     
     
@@ -164,7 +164,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsCell.identifier, for: indexPath) as! PostsCell
             let post = viewModel.posts[indexPath.item]
             
             cell.configure(with: post)

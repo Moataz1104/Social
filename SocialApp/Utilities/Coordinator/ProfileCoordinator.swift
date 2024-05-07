@@ -18,8 +18,8 @@ class ProfileCoordinator:Coordinator{
     
     
     func start() {
-        let viewModel = ProfileViewModel(coordinator: self)
-        let vc = ProfileView(viewModel: viewModel)
+        let viewModel = MyProfileViewModel(coordinator: self)
+        let vc = MyProfileView(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
 
     }
