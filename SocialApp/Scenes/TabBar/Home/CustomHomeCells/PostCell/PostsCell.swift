@@ -99,6 +99,8 @@ class PostsCell: UICollectionViewCell {
         postId = post.id ?? ""
         userId = post.createdBy?.id ?? ""
         postContent.text = post.content
+        userName.text = post.createdBy?.name ?? "Name"
+        userNickName.text = post.createdBy?.userName ?? "UserName"
         if let likesCount = post.likesCount{
             numberOfLikes.text = "\(likesCount)"
         }
