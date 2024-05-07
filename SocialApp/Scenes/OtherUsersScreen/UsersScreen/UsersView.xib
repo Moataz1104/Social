@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsersView" customModule="SocialApp" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="F8G-Q5-oRh" id="vf7-z5-NuJ"/>
-                <outlet property="view" destination="YI2-Ij-bqd" id="lfW-Bg-JXo"/>
+                <outlet property="collectionView" destination="F8G-Q5-oRh" id="Zre-0M-o6t"/>
+                <outlet property="view" destination="YI2-Ij-bqd" id="aGF-wf-Tdf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

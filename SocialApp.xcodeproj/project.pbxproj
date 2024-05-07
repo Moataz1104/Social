@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0007D3352BE9DCD100B1DB2D /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */; };
 		003613932BE9C78400FF519F /* UsersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613922BE9C78400FF519F /* UsersView.xib */; };
 		003613942BE9C78400FF519F /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003613912BE9C78400FF519F /* UsersView.swift */; };
 		003613982BE9C7E400FF519F /* UsersDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613972BE9C7E400FF519F /* UsersDetailsCell.xib */; };
@@ -54,7 +55,7 @@
 		006BB15D2BC253F200A0159D /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB15B2BC253F200A0159D /* NotifiView.swift */; };
 		006BB15E2BC253F200A0159D /* NotifiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB15C2BC253F200A0159D /* NotifiView.xib */; };
 		006BB1612BC2540100A0159D /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB15F2BC2540100A0159D /* MyProfileView.swift */; };
-		006BB1622BC2540100A0159D /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1602BC2540100A0159D /* ProfileView.xib */; };
+		006BB1622BC2540100A0159D /* MyProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1602BC2540100A0159D /* MyProfileView.xib */; };
 		006BB1672BC3966F00A0159D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1652BC3966F00A0159D /* HomeView.swift */; };
 		006BB16A2BC396A700A0159D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BB1692BC396A700A0159D /* HomeView.xib */; };
 		006BB1792BC3C0E200A0159D /* AddPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB1772BC3C0E200A0159D /* AddPostCell.swift */; };
@@ -75,7 +76,7 @@
 		009EB3D12BCBB614006F19C4 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EB3CF2BCBB614006F19C4 /* CommentCell.swift */; };
 		009EB3D22BCBB614006F19C4 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3D02BCBB614006F19C4 /* CommentCell.xib */; };
 		009EB3D62BCBEBF7006F19C4 /* MyProfileDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EB3D42BCBEBF7006F19C4 /* MyProfileDetailsCell.swift */; };
-		009EB3D72BCBEBF7006F19C4 /* UserProfileDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */; };
+		009EB3D72BCBEBF7006F19C4 /* MyProfileDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3D52BCBEBF7006F19C4 /* MyProfileDetailsCell.xib */; };
 		009EB3DC2BCCEEB5006F19C4 /* AddUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EB3DA2BCCEEB5006F19C4 /* AddUserInfoCell.swift */; };
 		009EB3DD2BCCEEB5006F19C4 /* AddUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009EB3DB2BCCEEB5006F19C4 /* AddUserInfoCell.xib */; };
 		00D96B1E2BC514A900D403AC /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D96B1C2BC514A900D403AC /* PostsCell.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		003613912BE9C78400FF519F /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		003613922BE9C78400FF519F /* UsersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersView.xib; sourceTree = "<group>"; };
 		003613962BE9C7E400FF519F /* UsersDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailsCell.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 		006BB15B2BC253F200A0159D /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		006BB15C2BC253F200A0159D /* NotifiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifiView.xib; sourceTree = "<group>"; };
 		006BB15F2BC2540100A0159D /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
-		006BB1602BC2540100A0159D /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		006BB1602BC2540100A0159D /* MyProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileView.xib; sourceTree = "<group>"; };
 		006BB1652BC3966F00A0159D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		006BB1692BC396A700A0159D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		006BB1772BC3C0E200A0159D /* AddPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
@@ -163,7 +165,7 @@
 		009EB3CF2BCBB614006F19C4 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		009EB3D02BCBB614006F19C4 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		009EB3D42BCBEBF7006F19C4 /* MyProfileDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetailsCell.swift; sourceTree = "<group>"; };
-		009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileDetailsCell.xib; sourceTree = "<group>"; };
+		009EB3D52BCBEBF7006F19C4 /* MyProfileDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileDetailsCell.xib; sourceTree = "<group>"; };
 		009EB3DA2BCCEEB5006F19C4 /* AddUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserInfoCell.swift; sourceTree = "<group>"; };
 		009EB3DB2BCCEEB5006F19C4 /* AddUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserInfoCell.xib; sourceTree = "<group>"; };
 		00D96B1C2BC514A900D403AC /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				003613912BE9C78400FF519F /* UsersView.swift */,
 				003613922BE9C78400FF519F /* UsersView.xib */,
+				0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */,
 			);
 			path = UsersScreen;
 			sourceTree = "<group>";
@@ -230,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				006BB15F2BC2540100A0159D /* MyProfileView.swift */,
-				006BB1602BC2540100A0159D /* ProfileView.xib */,
+				006BB1602BC2540100A0159D /* MyProfileView.xib */,
 				004DB37F2BD001EF00F279E9 /* MyProfileViewModel.swift */,
 			);
 			path = ProfileScreen;
@@ -517,7 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				009EB3D42BCBEBF7006F19C4 /* MyProfileDetailsCell.swift */,
-				009EB3D52BCBEBF7006F19C4 /* UserProfileDetailsCell.xib */,
+				009EB3D52BCBEBF7006F19C4 /* MyProfileDetailsCell.xib */,
 			);
 			path = UserDetailsCell;
 			sourceTree = "<group>";
@@ -638,11 +641,11 @@
 				006BB1062BBB8EC000A0159D /* Colors.xcassets in Resources */,
 				006BB15E2BC253F200A0159D /* NotifiView.xib in Resources */,
 				00D96B272BC92E8E00D403AC /* CommentsView.xib in Resources */,
-				009EB3D72BCBEBF7006F19C4 /* UserProfileDetailsCell.xib in Resources */,
+				009EB3D72BCBEBF7006F19C4 /* MyProfileDetailsCell.xib in Resources */,
 				004DB37D2BD001A300F279E9 /* MessagesView.xib in Resources */,
 				0099BE862BCE6DBB008DE9E0 /* NotifiCell.xib in Resources */,
 				006BB0EB2BBA7B3D00A0159D /* Assets.xcassets in Resources */,
-				006BB1622BC2540100A0159D /* ProfileView.xib in Resources */,
+				006BB1622BC2540100A0159D /* MyProfileView.xib in Resources */,
 				006BB1192BBBCD2700A0159D /* SignUpView.xib in Resources */,
 				003613982BE9C7E400FF519F /* UsersDetailsCell.xib in Resources */,
 				004DB3862BD0070700F279E9 /* MessageCell.xib in Resources */,
@@ -674,6 +677,7 @@
 				006BB0FC2BBA82AE00A0159D /* LogInView.swift in Sources */,
 				006BB13F2BBFA01600A0159D /* APIConstants.swift in Sources */,
 				006BB1612BC2540100A0159D /* MyProfileView.swift in Sources */,
+				0007D3352BE9DCD100B1DB2D /* UsersViewModel.swift in Sources */,
 				009EB3D62BCBEBF7006F19C4 /* MyProfileDetailsCell.swift in Sources */,
 				006BB1232BBBEAD400A0159D /* AuthCoordinator.swift in Sources */,
 				006BB1412BBFA0D100A0159D /* APIAuth.swift in Sources */,

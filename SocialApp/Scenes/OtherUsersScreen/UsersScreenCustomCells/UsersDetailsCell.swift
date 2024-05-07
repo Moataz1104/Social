@@ -8,10 +8,25 @@
 import UIKit
 
 class UsersDetailsCell: UICollectionViewCell {
-
+    
+    static let identifier = "UsersDetailsCell"
+    
+    @IBOutlet weak var followButtonOutlet: UIButton!
+    @IBOutlet weak var messageButtonOutlet: UIButton!
+    @IBOutlet weak var userImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configUi()
     }
-
+    
+    
+    private func configUi(){
+        userImage.layer.cornerRadius = userImage.bounds.width / 2
+        userImage.clipsToBounds = true
+        
+        followButtonOutlet.layer.cornerRadius = 7
+        messageButtonOutlet.layer.cornerRadius = 7
+        
+    }
+    
 }

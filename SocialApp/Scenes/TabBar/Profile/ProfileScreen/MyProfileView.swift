@@ -9,7 +9,7 @@ import UIKit
 
 class MyProfileView: UIViewController {
 
-    @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     private var viewModel : MyProfileViewModel
     
     var postsCellHeights: [IndexPath: CGFloat] = [:]
@@ -154,7 +154,7 @@ extension MyProfileView : MyProfileDetailsCellDelegate{
     
 }
 
-extension MyProfileView : PostsCellDelgate{
+extension MyProfileView : PostsCellHeightDelgate{
     func postCellHeightDidChange(_ height: CGFloat, at indexPath: IndexPath) {
         postsCellHeights[indexPath] = height
         collectionView.performBatchUpdates(nil, completion: nil)

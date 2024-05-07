@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 
-protocol PostsCellDelgate:AnyObject{
+protocol PostsCellHeightDelgate:AnyObject{
     func postCellHeightDidChange(_ height:CGFloat,at indexPath: IndexPath)
 }
 
@@ -36,7 +36,7 @@ class PostsCell: UICollectionViewCell {
     var indexPath: IndexPath?
     var disposeBag : DisposeBag? = DisposeBag()
 
-    weak var delegate : PostsCellDelgate?
+    weak var delegate : PostsCellHeightDelgate?
     weak var postDelegate: PostsCellDelegate?
 
     

@@ -13,7 +13,7 @@ protocol MyProfileDetailsCellDelegate: AnyObject {
 }
 
 class MyProfileDetailsCell: UICollectionViewCell {
-    static let identifier = "UserProfileDetailsCell"
+    static let identifier = "MyProfileDetailsCell"
     weak var delegate:MyProfileDetailsCellDelegate?
     
     @IBOutlet weak var userImage:UIImageView!

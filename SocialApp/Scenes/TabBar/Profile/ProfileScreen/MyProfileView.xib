@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyProfileView" customModule="SocialApp" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="gZ3-lW-Zfx" id="fF6-BR-mY5"/>
+                <outlet property="collectionView" destination="gZ3-lW-Zfx" id="7qW-tt-HQn"/>
                 <outlet property="view" destination="YjY-cY-HeB" id="Wqy-lv-YKE"/>
             </connections>
         </placeholder>

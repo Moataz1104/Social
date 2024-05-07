@@ -15,7 +15,7 @@ struct Post {
 }
 
 
-class HomeView: UIViewController , AddPostCellDelegate , PostsCellDelgate{
+class HomeView: UIViewController , AddPostCellDelegate , PostsCellHeightDelgate{
     private var viewModel : HomeViewModel
 
     let disposeBag : DisposeBag
