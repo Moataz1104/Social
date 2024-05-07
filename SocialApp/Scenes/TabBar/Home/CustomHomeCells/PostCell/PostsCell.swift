@@ -74,7 +74,7 @@ class PostsCell: UICollectionViewCell {
         userImage.addGestureRecognizer(tapGesture)
     }
     @objc func imageTapGesture(_ sender: UITapGestureRecognizer) {
-        viewModel?.showUsersScreen()
+        viewModel?.showUsersScreen(userId: userId)
     }
 
     
@@ -94,9 +94,10 @@ class PostsCell: UICollectionViewCell {
     
 //    MARK: - Post id
     var postId: String = ""
-
+    var userId:String = ""
     func configure(with post: Datum) {
         postId = post.id ?? ""
+        userId = post.createdBy?.id ?? ""
         postContent.text = post.content
         if let likesCount = post.likesCount{
             numberOfLikes.text = "\(likesCount)"

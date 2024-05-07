@@ -150,8 +150,9 @@ class HomeViewModel{
     }
     
     
-    func showUsersScreen(){
-        coordinator?.showUsersScreen()
+    func showUsersScreen(userId:String){
+        coordinator?.showUsersScreen(userId: userId)
+        print(userId)
     }
     
 

@@ -22,6 +22,8 @@ struct apiK{
     static let postInteractionsURL =
     URL(string:"https://social-app-api-944j.onrender.com/api/v1/post")
     
+    static let getUserURL = URL(string: "https://social-app-api-944j.onrender.com/api/v1/user")
+    
 }
 
 /*

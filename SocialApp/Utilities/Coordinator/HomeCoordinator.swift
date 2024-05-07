@@ -35,9 +35,10 @@ class HomeCoordinator:Coordinator{
 
     }
     
-    func showUsersScreen(){
+    func showUsersScreen(userId:String){
         let disposeBag = DisposeBag()
-        let viewModel = UsersViewModel(coordinator: self, disposeBag: disposeBag)
+        let viewModel =
+        UsersViewModel(coordinator: self, disposeBag: disposeBag, userId: userId)
         let vc = UsersView(viewModel: viewModel, disposeBag: disposeBag)
         navigationController.pushViewController(vc, animated: true)
     }

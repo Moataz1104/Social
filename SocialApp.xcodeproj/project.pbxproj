@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0007D3352BE9DCD100B1DB2D /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */; };
+		0007D3372BEA18CF00B1DB2D /* APIUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007D3362BEA18CF00B1DB2D /* APIUsers.swift */; };
 		003613932BE9C78400FF519F /* UsersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613922BE9C78400FF519F /* UsersView.xib */; };
 		003613942BE9C78400FF519F /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003613912BE9C78400FF519F /* UsersView.swift */; };
 		003613982BE9C7E400FF519F /* UsersDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003613972BE9C7E400FF519F /* UsersDetailsCell.xib */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		0007D3342BE9DCD100B1DB2D /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		0007D3362BEA18CF00B1DB2D /* APIUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUsers.swift; sourceTree = "<group>"; };
 		003613912BE9C78400FF519F /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		003613922BE9C78400FF519F /* UsersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersView.xib; sourceTree = "<group>"; };
 		003613962BE9C7E400FF519F /* UsersDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailsCell.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				006BB1402BBFA0D100A0159D /* APIAuth.swift */,
 				004DB3892BD3F0E200F279E9 /* APIPosts.swift */,
 				007289382BE34E62007CF4D7 /* APIPostInteractions.swift */,
+				0007D3362BEA18CF00B1DB2D /* APIUsers.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				0099BE852BCE6DBB008DE9E0 /* NotifiCell.swift in Sources */,
 				006BB1212BBBDF3600A0159D /* MainCoordinator.swift in Sources */,
 				007289352BDF1EE3007CF4D7 /* PostModel.swift in Sources */,
+				0007D3372BEA18CF00B1DB2D /* APIUsers.swift in Sources */,
 				006BB11B2BBBCD7700A0159D /* SignUpViewModel.swift in Sources */,
 				004DB3802BD001EF00F279E9 /* MyProfileViewModel.swift in Sources */,
 				00D96B222BC9299400D403AC /* HomeViewModel.swift in Sources */,

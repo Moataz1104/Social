@@ -70,6 +70,8 @@ extension UsersView: UICollectionViewDataSource,UICollectionViewDelegateFlowLayo
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsCell.identifier, for: indexPath) as! PostsCell
+            
+            
             return cell
         }
     }
