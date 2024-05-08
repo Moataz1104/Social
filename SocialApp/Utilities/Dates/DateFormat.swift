@@ -31,8 +31,8 @@ class DateFormat{
             return "\(week) week\(week == 1 ? "" : "s") ago"
         } else if let day = components.day, day > 0 {
             return "\(day) day\(day == 1 ? "" : "s") ago"
-        } else if let hour = components.hour, hour > 0 {
-            return "\(hour) hour\(hour == 1 ? "" : "s") ago"
+        } else if let hour = components.hour, hour - 3 > 0 {
+            return "\(hour - 3) hour\(hour == 1 ? "" : "s") ago"
         } else if let minute = components.minute, minute > 0 {
             return "\(minute) minute\(minute == 1 ? "" : "s") ago"
         } else if let second = components.second, second > 0 {
