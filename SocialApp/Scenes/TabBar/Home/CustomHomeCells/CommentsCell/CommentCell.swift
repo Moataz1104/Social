@@ -30,21 +30,24 @@ class CommentCell: UICollectionViewCell {
         userImage.clipsToBounds = true
 
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        getPostCellHeight()
-    }
 
     
-    func getPostCellHeight(){
-        let maxSize = CGSize(width: commentContent.bounds.width, height: CGFloat.greatestFiniteMagnitude)
-        let totalHeight = commentContent.text?.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: commentContent.font ?? UIFont.systemFont(ofSize: 16)], context: nil).height ?? 0
-
+    func calculateTextHeight(text: String, font: UIFont = UIFont.systemFont(ofSize: 17), width: CGFloat) {
+        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let boundingRect = NSString(string: text).boundingRect(
+            with: maxSize,
+            options: .usesLineFragmentOrigin,
+            attributes: [NSAttributedString.Key.font: font],
+            context: nil
+        )
         if let indexPath = indexPath {
-            delegate?.commentCellHeightDidChange(totalHeight + 100, at: indexPath)
+            delegate?.commentCellHeightDidChange(ceil(boundingRect.height) + 150, at: indexPath)
         }
-        
     }
 
+    func configureCell(comment:String){
+        calculateTextHeight(text: comment, width: commentContent.bounds.width)
+        commentContent.text = comment
+    }
 
 }

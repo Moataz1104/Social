@@ -83,11 +83,11 @@ extension CommentsView : UICollectionViewDataSource, UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommentCell.cellIdentifier, for: indexPath) as! CommentCell
-                
         cell.indexPath = indexPath
         cell.delegate = self
-        cell.commentContent.text =
-        viewModel.commentData?.data?[indexPath.item].content ?? ""
+        if let comment = viewModel.commentData?.data?[indexPath.item].content{
+            cell.configureCell(comment:comment)
+        }
         return cell
     }
     
