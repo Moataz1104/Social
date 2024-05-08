@@ -165,13 +165,12 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostsCell.identifier, for: indexPath) as! PostsCell
-            let post = viewModel.posts[indexPath.item]
-            
-            cell.configure(with: post)
-            cell.delegate = self
             cell.indexPath = indexPath
-            cell.viewModel = viewModel
+            cell.delegate = self
             cell.postDelegate = self
+            cell.viewModel = viewModel
+            let post = viewModel.posts[indexPath.item]
+            cell.configure(with: post)
             return cell
         }
     }

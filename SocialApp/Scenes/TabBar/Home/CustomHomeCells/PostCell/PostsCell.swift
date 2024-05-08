@@ -34,7 +34,6 @@ class PostsCell: UICollectionViewCell {
     
     var viewModel : HomeViewModel?
     var indexPath: IndexPath?
-    var disposeBag : DisposeBag? = DisposeBag()
 
     weak var delegate : PostsCellHeightDelgate?
     weak var postDelegate: PostsCellDelegate?
@@ -52,11 +51,6 @@ class PostsCell: UICollectionViewCell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        disposeBag = DisposeBag()
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        getPostCellHeight()
     }
     
 //    MARK: - Actions
@@ -81,21 +75,28 @@ class PostsCell: UICollectionViewCell {
     
 //    MARK: - cell height
     
-    func getPostCellHeight(){
-        let maxSize = CGSize(width: postContent.bounds.width, height: CGFloat.greatestFiniteMagnitude)
-        let totalHeight = postContent.text?.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: postContent.font ?? UIFont.systemFont(ofSize: 16)], context: nil).height ?? 0
-
-        if let indexPath = indexPath {
-            delegate?.postCellHeightDidChange(totalHeight + 200, at: indexPath)
-        }
-        
-    }
     
+    func calculateTextHeight(text: String, font: UIFont = UIFont.systemFont(ofSize: 17), width: CGFloat) {
+        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let boundingRect = NSString(string: text).boundingRect(
+            with: maxSize,
+            options: .usesLineFragmentOrigin,
+            attributes: [NSAttributedString.Key.font: font],
+            context: nil
+        )
+        if let indexPath = indexPath {
+            delegate?.postCellHeightDidChange(ceil(boundingRect.height) + 200, at: indexPath)
+        }
+    }
+
     
 //    MARK: - Post id
     var postId: String = ""
     var userId:String = ""
     func configure(with post: Datum) {
+        let text = post.content ?? ""
+        let width = postContent.bounds.width
+        calculateTextHeight(text: text, width: width)
         postId = post.id ?? ""
         userId = post.createdBy?.id ?? ""
         postContent.text = post.content
