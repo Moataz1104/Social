@@ -41,7 +41,7 @@ class CommentCell: UICollectionViewCell {
             context: nil
         )
         if let indexPath = indexPath {
-            delegate?.commentCellHeightDidChange(ceil(boundingRect.height) + 150, at: indexPath)
+            delegate?.commentCellHeightDidChange(ceil(boundingRect.height) + 95, at: indexPath)
         }
     }
 
